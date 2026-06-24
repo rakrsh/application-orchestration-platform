@@ -1,0 +1,5 @@
+node_modules/
+dist/
+/.angular
+/.sass-cache
+package-lock.json
