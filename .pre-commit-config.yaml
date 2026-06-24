@@ -7,24 +7,38 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
 
+# Python formatting + linting (expects tools available in environment or CI)
   - repo: local
     hooks:
-      - id: black
-        name: black
-        entry: black
+      - id: python-black
+        name: black (format Python)
+        entry: python -m black backend/ --quiet
         language: system
         types: [python]
-      - id: isort
-        name: isort
-        entry: isort --profile black
+      - id: python-isort
+        name: isort (sort imports)
+        entry: python -m isort backend/ --profile black
         language: system
         types: [python]
-      - id: flake8
-        name: flake8
-        entry: flake8
+      - id: python-flake8
+        name: flake8 (lint Python)
+        entry: python -m flake8 backend/
         language: system
         types: [python]
 
-# Note: The 'local' hooks expect `black`, `isort`, and `flake8` to be
-# available in the developer environment (e.g., via a virtualenv).
-# CI installs the tools before running pre-commit.
+# Frontend formatting + linting using npm (runs only for files under frontend/)
+      - id: npm-install-frontend
+        name: npm ci (frontend dependencies)
+        entry: npm ci --prefix frontend
+        language: system
+        always_run: false
+      - id: npm-lint-frontend
+        name: npm run lint (frontend)
+        entry: npm run lint --prefix frontend
+        language: system
+        files: ^frontend/.*\.(ts|html|css|scss|js)$
+      - id: npm-format-frontend
+        name: npm run format (frontend)
+        entry: npm run format --prefix frontend
+        language: system
+        files: ^frontend/.*\.(ts|html|css|scss|js)$

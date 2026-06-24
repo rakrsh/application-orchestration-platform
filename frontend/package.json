@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "npx ng serve --host 0.0.0.0 --port 4200",
-    "build": "npx ng build --configuration production"
+    "build": "npx ng build --configuration production",
+    "lint": "prettier --check \"src/**/*.{ts,html,css,scss,js}\"",
+    "format": "prettier --write \"src/**/*.{ts,html,css,scss,js}\""
   },
   "dependencies": {
     "@angular/animations": "^16.2.0",
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@angular/cli": "^16.2.0",
     "@angular/compiler-cli": "^16.2.0",
-    "typescript": "~5.1.0"
+    "typescript": "~5.1.0",
+    "prettier": "^3.9.0"
   }
 }
