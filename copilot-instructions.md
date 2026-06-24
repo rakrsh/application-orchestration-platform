@@ -9,7 +9,14 @@ Key files:
 
 Development conventions:
 - Backend: FastAPI + Pydantic for schema validation.
-- Frontend: Angular v17+ SPA.
+- Frontend: Angular (scaffold committed under `frontend/`). To run locally, from `frontend/` run:
+
+```bash
+npm install
+npx ng serve --open
+```
+
+The scaffold uses a local `package.json` and `frontend/README.md` with details; upgrade Angular version as needed.
 - Auth: Keycloak for global RBAC; OpenFGA for fine-grained ReBAC.
 
 Agent behavior hints:
