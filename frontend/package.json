@@ -9,19 +9,19 @@
     "format": "prettier --write \"src/**/*.{ts,html,css,scss,js}\""
   },
   "dependencies": {
-    "@angular/animations": "^16.2.0",
-    "@angular/common": "^16.2.0",
-    "@angular/compiler": "^16.2.0",
-    "@angular/core": "^16.2.0",
-    "@angular/platform-browser": "^16.2.0",
-    "@angular/platform-browser-dynamic": "^16.2.0",
+    "@angular/animations": "^22.0.0",
+    "@angular/common": "^22.0.0",
+    "@angular/compiler": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "@angular/platform-browser": "^22.0.0",
+    "@angular/platform-browser-dynamic": "^22.0.0",
     "rxjs": "^7.8.0",
-    "zone.js": "~0.13.0"
+    "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/cli": "^16.2.0",
-    "@angular/compiler-cli": "^16.2.0",
-    "typescript": "~5.1.0",
-    "prettier": "^3.9.0"
+    "@angular/cli": "^22.0.0",
+    "@angular/compiler-cli": "^15.0.4",
+    "prettier": "^3.8.0",
+    "typescript": "~6.0.0"
   }
 }
