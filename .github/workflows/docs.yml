@@ -1,0 +1,33 @@
+name: Deploy Docs
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install MkDocs dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs mkdocs-material
+
+      - name: Build and deploy docs
+        uses: rakrsh/central-actions/doc-build-deploy@main
+        with:
+          doc-directory: .
+          doc-build-command: mkdocs build --strict
+          publish-directory: ./site
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy: true

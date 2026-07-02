@@ -13,3 +13,7 @@ Primary docs and artifacts:
 - Copilot instructions and agent/skill docs: [copilot-instructions.md](copilot-instructions.md), [agents.md](agents.md), [skills.md](skills.md)
 
 See the repository docs folder for detailed API contracts and deployment notes.
+
+## Documentation
+
+The MkDocs documentation site is published to GitHub Pages through the GitHub Actions workflow in [.github/workflows/docs.yml](.github/workflows/docs.yml).
