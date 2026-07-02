@@ -1,0 +1,37 @@
+site_name: Application Orchestration Platform
+site_description: Documentation for the application orchestration platform
+site_author: CapOS
+repo_url: https://github.com/rakrsh/application-orchestration-platform
+repo_name: rakrsh/application-orchestration-platform
+nav:
+  - Home: index.md
+  - Architecture: architecture/C4_architecture.md
+  - Backend: backend/fastapi/README.md
+  - Frontend: frontend/README.md
+  - Auth:
+      - Keycloak: auth/KEYCLOAK_README.md
+      - OAuth2 Proxy: auth/OAUTH2_PROXY_README.md
+      - OpenFGA: auth/OPENFGA_README.md
+  - Operations:
+      - Development Guide: development-guide.md
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/rakrsh/application-orchestration-platform
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - attr_list
+  - toc:
+      permalink: true
+plugins: []
