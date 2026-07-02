@@ -1,20 +1,41 @@
 version: '3.8'
 services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: appdb
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: apppass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
   keycloak:
     image: quay.io/keycloak/keycloak:21.1.1
     command: start-dev --http-enabled=true
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/appdb
+      KC_DB_USERNAME: appuser
+      KC_DB_PASSWORD: apppass
     ports:
       - "8080:8080"
+    depends_on:
+      - postgres
 
   openfga:
     image: openfga/openfga:0.8.0
     environment:
       - OPENFGA_SERVE_HOST=0.0.0.0
+      - OPENFGA_DATASTORE_ENGINE=postgres
+      - OPENFGA_DATASTORE_URI=postgres://appuser:apppass@postgres:5432/appdb?sslmode=disable
     ports:
       - "8081:8081"
+    depends_on:
+      - postgres
 
   oauth2-proxy:
     image: quay.io/oauth2-proxy/oauth2-proxy:7.3.0
@@ -36,6 +57,11 @@ services:
       - "8000:8000"
     environment:
       - OPENFGA_ENDPOINT=http://openfga:8081
+      - DATABASE_URL=postgresql://appuser:apppass@postgres:5432/appdb
     depends_on:
       - keycloak
       - openfga
+      - postgres
+
+volumes:
+  postgres-data:

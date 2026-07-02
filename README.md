@@ -2,6 +2,10 @@
 
 A platform to host and manage web applications.
 
+## Shared persistence
+
+The local stack now includes a PostgreSQL service for shared storage across the FastAPI app, Keycloak, and OpenFGA. Start everything with Docker Compose and the data will persist in the `postgres-data` volume between runs.
+
 Primary docs and artifacts:
 
 - Statement of Work: [SOW.md](SOW.md)

@@ -1,8 +1,13 @@
+import os
+
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
+from app.storage import DatabaseAppStore
+
 app = FastAPI(title="CapOS FastAPI Stub")
+app_store = DatabaseAppStore(os.getenv("DATABASE_URL"))
 
 
 @app.middleware("http")
@@ -28,7 +33,7 @@ async def health():
 
 @app.get("/api/apps")
 async def list_apps(request: Request):
-    return [{"id": "demo-app", "name": "Demo App", "owner": request.state.user}]
+    return app_store.list_apps()
 
 
 @app.post("/api/apps", status_code=201)
@@ -36,5 +41,4 @@ async def create_app(payload: AppIn, request: Request):
     roles = request.state.roles
     if not any(r in roles for r in ("admin", "editor")):
         raise HTTPException(status_code=403, detail="insufficient role")
-    # In a real implementation: persist to DB, call OpenFGA, write tuple
-    return {"id": "new-app", "name": payload.name, "owner": request.state.user}
+    return app_store.create_app(name=payload.name, description=payload.description, owner=request.state.user)
