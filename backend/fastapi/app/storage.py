@@ -26,7 +26,12 @@ class InMemoryAppStore:
     def list_apps(self) -> List[dict]:
         return [dict(app) for app in self._apps]
 
-    def create_app(self, name: str, description: Optional[str], owner: str) -> dict:
+    def create_app(
+        self,
+        name: str,
+        description: Optional[str],
+        owner: str,
+    ) -> dict:
         app = {
             "id": f"app-{len(self._apps) + 1}",
             "name": name,
@@ -39,7 +44,13 @@ class InMemoryAppStore:
 
 class DatabaseAppStore:
     def __init__(self, database_url: Optional[str] = None) -> None:
-        self.database_url = database_url or os.getenv("DATABASE_URL", "postgresql://appuser:apppass@postgres:5432/appdb")
+        self.database_url = (
+            database_url
+            or os.getenv(
+                "DATABASE_URL",
+                "postgresql://appuser:apppass@postgres:5432/appdb",
+            )
+        )
         self.engine = create_engine(self.database_url)
         Base.metadata.create_all(self.engine)
         self.session_factory = sessionmaker(bind=self.engine)
@@ -49,7 +60,11 @@ class DatabaseAppStore:
 
     def list_apps(self) -> List[dict]:
         with self._session() as session:
-            rows = session.query(AppRecord).order_by(AppRecord.created_at.asc()).all()
+            rows = (
+                session.query(AppRecord)
+                .order_by(AppRecord.created_at.asc())
+                .all()
+            )
             return [
                 {
                     "id": row.id,
@@ -60,9 +75,19 @@ class DatabaseAppStore:
                 for row in rows
             ]
 
-    def create_app(self, name: str, description: Optional[str], owner: str) -> dict:
+    def create_app(
+        self,
+        name: str,
+        description: Optional[str],
+        owner: str,
+    ) -> dict:
         with self._session() as session:
-            record = AppRecord(id=f"app-{int(datetime.utcnow().timestamp() * 1000)}", name=name, description=description, owner=owner)
+            record = AppRecord(
+                id=f"app-{int(datetime.utcnow().timestamp() * 1000)}",
+                name=name,
+                description=description,
+                owner=owner,
+            )
             session.add(record)
             session.commit()
             session.refresh(record)
