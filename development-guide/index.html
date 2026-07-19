@@ -828,7 +828,12 @@
 
 <h1 id="development-guide">Development Guide<a class="headerlink" href="#development-guide" title="Permanent link">&para;</a></h1>
 <h2 id="local-setup">Local setup<a class="headerlink" href="#local-setup" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+<p>For a full local development environment, run the bootstrap script from the repository root:</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>The script starts the Docker-based infrastructure services and launches both the backend and frontend in development mode.</p>
+<p>To validate the prerequisites without starting services, use:</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-check-only</span>
 </code></pre></div>
 <h2 id="useful-commands">Useful commands<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h2>
 <ul>
