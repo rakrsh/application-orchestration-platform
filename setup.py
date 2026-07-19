@@ -28,27 +28,43 @@ def run_command(command: List[str], cwd: Optional[Path] = None, env: Optional[di
 
 
 def ensure_command(name: str) -> str:
-    resolved = shutil.which(name)
-    if resolved:
-        return resolved
-    if os.name == "nt" and name == "npm":
-        resolved = shutil.which("npm.cmd")
+    candidates = [name]
+    if os.name == "nt":
+        if name == "python":
+            candidates = ["py", "python", "python.exe", "python3"]
+        elif name == "npm":
+            candidates = ["npm.cmd", "npm", "npx.cmd", "npx"]
+        elif name == "docker":
+            candidates = ["docker.exe", "docker"]
+
+    for candidate in candidates:
+        resolved = shutil.which(candidate)
         if resolved:
             return resolved
+
     raise RuntimeError(f"Required command not found on PATH: {name}")
 
 
-def create_virtual_environment() -> Path:
-    if VENV_DIR.exists():
-        return VENV_DIR
-
-    print(f"Creating Python virtual environment at {VENV_DIR}")
-    builder = venv.EnvBuilder(with_pip=True, clear=False, symlinks=False)
-    builder.create(VENV_DIR)
-
+def python_executable_for_env(env_dir: Path) -> Path:
     if os.name == "nt":
-        return VENV_DIR / "Scripts" / "python.exe"
-    return VENV_DIR / "bin" / "python"
+        return env_dir / "Scripts" / "python.exe"
+    return env_dir / "bin" / "python"
+
+
+def create_virtual_environment() -> Path:
+    if VENV_DIR.exists() and not VENV_DIR.is_dir():
+        raise RuntimeError(f"Expected {VENV_DIR} to be a directory, but found a file")
+
+    if not VENV_DIR.exists():
+        print(f"Creating Python virtual environment at {VENV_DIR}")
+        builder = venv.EnvBuilder(with_pip=True, clear=False, symlinks=False)
+        builder.create(VENV_DIR)
+
+    python_executable = python_executable_for_env(VENV_DIR)
+    if not python_executable.exists():
+        raise RuntimeError(f"Python virtual environment was not created successfully: {python_executable}")
+
+    return python_executable
 
 
 def install_backend_requirements(python_executable: Path) -> None:
