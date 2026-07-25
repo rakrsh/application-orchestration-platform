@@ -14,8 +14,9 @@ This project provides a reference platform for hosting and managing web applicat
 ## Quick start
 
 1. Clone the repository.
-2. Start the local services with `docker compose up -d`.
-3. Open the frontend or backend endpoints as needed for local development.
+2. Run `python setup.py` to install dependencies and create the platform CLI wrappers.
+3. Start the local services with `.\platform.bat start` (or `./platform start` on Unix). This will automatically open the UI in your browser.
+4. When finished, stop the services with `.\platform.bat stop`.
 
 ## Documentation map
 
