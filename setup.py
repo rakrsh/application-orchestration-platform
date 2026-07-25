@@ -95,11 +95,11 @@ def create_cli_wrappers() -> None:
 
     with bat_path.open("w", encoding="utf-8") as f:
         f.write("@echo off\n")
-        f.write('python "%~dp0platform.py" %*\n')
+        f.write('python "%~dp0cli.py" %*\n')
 
     with sh_path.open("w", encoding="utf-8") as f:
         f.write("#!/usr/bin/env bash\n")
-        f.write('python3 "$(dirname "$0")/platform.py" "$@"\n')
+        f.write('python3 "$(dirname "$0")/cli.py" "$@"\n')
 
     if os.name != "nt":
         os.chmod(sh_path, 0o755)

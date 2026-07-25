@@ -6,11 +6,11 @@ import json
 import logging
 import os
 import shutil
+import signal
 import subprocess
 import sys
-import webbrowser
 import time
-import signal
+import webbrowser
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
