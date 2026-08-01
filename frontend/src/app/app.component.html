@@ -1,2 +1,22 @@
-<h1>{{ title }}</h1>
-<p>Welcome to the Angular frontend scaffold for the application orchestration platform.</p>
+<div class="app-shell">
+  <app-header></app-header>
+  <main class="app-main">
+    <ng-container *ngIf="state.activeTab$ | async as activeTab">
+      <app-overview-tab
+        *ngIf="activeTab === 'overview'"
+        [applications]="applications"
+        [osFilter]="state.osFilter$ | async"
+        [deploymentMode]="state.deploymentMode$ | async"
+        [persona]="state.persona$ | async"
+      ></app-overview-tab>
+
+      <app-create-app-wizard *ngIf="activeTab === 'create'"></app-create-app-wizard>
+
+      <section *ngIf="activeTab === 'telemetry'" class="telemetry-panel glass-panel">
+        <p class="eyebrow">Telemetry</p>
+        <h2>Platform monitoring coming soon</h2>
+        <p>Live charts and health wave metrics will appear here once telemetry is enabled.</p>
+      </section>
+    </ng-container>
+  </main>
+</div>

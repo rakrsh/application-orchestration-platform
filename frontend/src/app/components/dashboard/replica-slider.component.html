@@ -1,0 +1,23 @@
+<div class="slider-shell">
+  <div class="slider-header">
+    <span>Scale replicas</span>
+    <span class="slider-value">{{ value }} replicas</span>
+  </div>
+
+  <div class="slider-track">
+    <input
+      type="range"
+      [min]="min"
+      [max]="max"
+      [value]="value"
+      [disabled]="disabled"
+      (input)="onInput($event)"
+      (change)="onChange()"
+      class="slider"
+    />
+  </div>
+
+  <div class="slider-popover">
+    <p><strong>{{ value }} Replicas</strong> → ~{{ estimatedRam }} MB RAM, {{ estimatedCpu }} CPU cores</p>
+  </div>
+</div>

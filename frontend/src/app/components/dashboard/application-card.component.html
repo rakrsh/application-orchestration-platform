@@ -1,0 +1,42 @@
+<article class="app-card glass-panel">
+  <button type="button" class="app-card-header" (click)="toggleExpand()">
+    <div>
+      <p class="app-status" [ngClass]="application.status">{{ formatStatus(application.status) }}</p>
+      <h3>{{ application.name }}</h3>
+      <p class="app-description">{{ application.description }}</p>
+    </div>
+
+    <div class="header-meta">
+      <span class="app-tag">{{ application.environment }}</span>
+      <span class="app-count">{{ projectCount }} services</span>
+      <span class="app-chevron">{{ expanded ? '▲' : '▼' }}</span>
+    </div>
+  </button>
+
+  <div class="app-summary">
+    <div class="summary-block">
+      <p class="summary-label">CPU allocation</p>
+      <p class="summary-value">{{ aggregatedCpu }}</p>
+    </div>
+    <div class="summary-block">
+      <p class="summary-label">Memory usage</p>
+      <p class="summary-value">{{ aggregatedMemory }}</p>
+    </div>
+    <div class="summary-block tags-block">
+      <p class="summary-label">OS targets</p>
+      <div class="tag-row">
+        <span class="tag" *ngFor="let tag of application.tags">{{ tag }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="expanded" class="project-list">
+    <app-project-card
+      *ngFor="let project of filteredProjects"
+      [project]="project"
+      [deploymentMode]="deploymentMode"
+      [persona]="persona"
+      [canEdit]="persona !== 'auditor'"
+    ></app-project-card>
+  </div>
+</article>

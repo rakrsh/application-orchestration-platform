@@ -5,7 +5,7 @@ description: How to start and stop the platform services (frontend, backend, ass
 
 # Start Platform
 
-The repository includes a custom Python script (`cli.py`) for managing all platform services at once. 
+The repository includes a custom Python script (`cli.py`) for managing all platform services at once.
 
 ## Starting the Platform
 To start the platform, run:
@@ -18,6 +18,9 @@ This command starts:
 - The FastAPI backend (running at `localhost:8000`)
 - The Angular frontend (running at `localhost:4200`)
 - Any asset services specified in `assets/service-manifest.json`
+
+The frontend now includes a dashboard UI with orchestration controls, app/project cards, replica scaling, and a creation wizard.
+If dependencies are missing, install them first in the `frontend/` folder with `npm install`.
 
 For the production UI container, the repository also supports running the frontend through nginx via Docker Compose:
 ```bash

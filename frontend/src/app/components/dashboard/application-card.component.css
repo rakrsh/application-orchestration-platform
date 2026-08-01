@@ -1,0 +1,111 @@
+.app-card {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.92);
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.app-card-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+
+.app-card-header h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1.2rem;
+}
+
+.app-status {
+  margin: 0 0 0.6rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a7f3d0;
+}
+
+.app-status.healthy {
+  color: #a7f3d0;
+}
+
+.app-status.degraded {
+  color: #fbbf24;
+}
+
+.app-status.failed {
+  color: #fecaca;
+}
+
+.app-description {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.header-meta {
+  display: grid;
+  gap: 0.45rem;
+  align-items: end;
+  justify-items: end;
+}
+
+.app-tag,
+.app-count,
+.app-chevron {
+  display: inline-flex;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  font-size: 0.83rem;
+}
+
+.app-summary {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.summary-block {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.summary-label {
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.summary-value {
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tags-block .tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project-list {
+  display: grid;
+  gap: 1rem;
+}

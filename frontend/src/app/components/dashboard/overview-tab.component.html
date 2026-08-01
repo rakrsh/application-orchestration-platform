@@ -1,0 +1,22 @@
+<section class="overview-shell glass-panel">
+  <div class="section-header">
+    <div>
+      <p class="eyebrow">Overview</p>
+      <h2>Applications & services</h2>
+    </div>
+  </div>
+
+  <div *ngIf="filteredApplications.length === 0" class="empty-state">
+    <p>No applications match the selected OS filter yet.</p>
+  </div>
+
+  <div class="cards-grid">
+    <app-application-card
+      *ngFor="let app of filteredApplications"
+      [application]="app"
+      [osFilter]="osFilter"
+      [deploymentMode]="deploymentMode"
+      [persona]="persona"
+    ></app-application-card>
+  </div>
+</section>

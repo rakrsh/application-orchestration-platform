@@ -15,8 +15,8 @@ This file documents the conceptual agent roles for automation and code-assist wo
 - **Role**: Specialized in Angular, RxJS, component structuring, and UI aesthetics.
 - **Responsibilities**:
   - Implement and maintain the frontend web application in `frontend/`.
-  - Adhere to the established dynamic and premium design aesthetics.
-  - Ensure correct Angular builder configuration and TS/Angular compilation.
+  - Build and refine the orchestration dashboard UI, including the header, application/project cards, replica scaling slider, and create-app wizard.
+  - Adhere to the established dark glassmorphism design system and ensure correct Angular builder configuration and TS/Angular compilation.
 
 ### Platform Architect
 - **Role**: High-level orchestrator focusing on project architecture, integration, and platform tooling.

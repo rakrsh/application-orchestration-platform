@@ -1,0 +1,72 @@
+<section class="header-card glass-panel">
+  <div class="header-row">
+    <div>
+      <p class="eyebrow">Orchestration Dashboard</p>
+      <h1>Platform control center</h1>
+    </div>
+
+    <div class="header-actions">
+      <div class="control-group">
+        <label class="control-label">Deployment mode</label>
+        <select
+          class="control-select"
+          [value]="state.deploymentMode$ | async"
+          (change)="state.setDeploymentMode($any($event.target).value)"
+          [disabled]="!canEditMode"
+        >
+          <option *ngFor="let mode of modes" [value]="mode.value">{{ mode.label }}</option>
+        </select>
+      </div>
+
+      <div class="control-group os-filters">
+        <label class="control-label">OS filters</label>
+        <div class="pill-group">
+          <button
+            *ngFor="let os of osTargets"
+            type="button"
+            class="pill-button"
+            [class.active]="(state.osFilter$ | async) === os.value"
+            (click)="state.setOsFilter(os.value)"
+          >
+            <span class="pill-icon">{{ os.icon }}</span>
+            {{ os.label }}
+          </button>
+        </div>
+      </div>
+
+      <div class="control-group persona-toggle">
+        <label class="control-label">Persona</label>
+        <div class="persona-pill-group">
+          <button
+            *ngFor="let persona of personas"
+            type="button"
+            class="persona-pill"
+            [class.selected]="(state.persona$ | async) === persona.value"
+            (click)="state.setPersona(persona.value)"
+          >
+            {{ persona.label }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-bar">
+    <button
+      type="button"
+      *ngFor="let tab of tabs"
+      [class.active]="(state.activeTab$ | async) === tab.value"
+      (click)="setActiveTab(tab.value)"
+    >
+      {{ tab.label }}
+    </button>
+  </div>
+
+  <div class="persona-note" *ngIf="personaValue !== 'platform-admin'">
+    <span>
+      {{ personaValue === 'auditor'
+        ? 'Read-only audit mode active. Deployment mode and cluster controls are disabled.'
+        : 'Developer mode active. Deployment mode changes are limited.' }}
+    </span>
+  </div>
+</section>

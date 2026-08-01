@@ -1,0 +1,102 @@
+.project-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.project-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-title {
+  margin: 0 0 0.25rem;
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.project-meta {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.project-status {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.project-status.healthy {
+  background: rgba(16, 185, 129, 0.16);
+  color: #a7f3d0;
+}
+
+.project-status.degraded {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fbbf24;
+}
+
+.project-status.failed {
+  background: rgba(239, 68, 68, 0.16);
+  color: #fecaca;
+}
+
+.project-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.project-stat {
+  display: grid;
+  gap: 0.35rem;
+  color: #cbd5e1;
+}
+
+.project-stat span {
+  font-size: 0.78rem;
+}
+
+.project-stat strong {
+  color: #f8fafc;
+  font-size: 1rem;
+}
+
+.project-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.action-button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(56, 189, 248, 0.15);
+  color: #e2e8f0;
+  border-radius: 999px;
+  padding: 0.75rem 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.action-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: rgba(56, 189, 248, 0.24);
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-button.ghost {
+  background: rgba(255, 255, 255, 0.04);
+}

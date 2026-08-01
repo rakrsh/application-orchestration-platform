@@ -1,0 +1,38 @@
+<article class="project-card">
+  <div class="project-card-top">
+    <div>
+      <p class="project-title">{{ project.name }}</p>
+      <p class="project-meta">{{ project.runtime }} · {{ project.osTarget | titlecase }} · {{ deploymentLabel }}</p>
+    </div>
+    <div class="project-status" [ngClass]="project.status">{{ project.status }}</div>
+  </div>
+
+  <div class="project-stats">
+    <div class="project-stat">
+      <span>Replicas</span>
+      <strong>{{ project.replicas }} → {{ project.targetReplicas }}</strong>
+    </div>
+    <div class="project-stat">
+      <span>P95 latency</span>
+      <strong>{{ project.latencyP95Ms }} ms</strong>
+    </div>
+    <div class="project-stat">
+      <span>Error rate</span>
+      <strong>{{ project.errorRatePercent }}%</strong>
+    </div>
+  </div>
+
+  <app-replica-slider
+    [value]="project.targetReplicas"
+    [min]="1"
+    [max]="20"
+    [disabled]="!canEdit"
+    (valueChange)="project.targetReplicas = $event"
+    (commit)="handleReplicaCommit($event)"
+  ></app-replica-slider>
+
+  <div class="project-actions">
+    <button type="button" class="action-button" [disabled]="!canEdit">Redeploy</button>
+    <button type="button" class="action-button ghost">Logs</button>
+  </div>
+</article>

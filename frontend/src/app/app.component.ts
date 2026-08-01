@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Application } from './types/orchestration';
+import { OrchestrationStateService } from './services/orchestration-state.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,51 @@ import { Component } from '@angular/core';
   standalone: false
 })
 export class AppComponent {
-  title = 'AOP Frontend';
+  applications: Application[] = [
+    {
+      id: 'app-01',
+      name: 'E-Commerce Platform',
+      description: 'Checkout workflow, catalog delivery, and payment orchestration.',
+      environment: 'production',
+      status: 'healthy',
+      tags: ['linux', 'windows'],
+      createdAt: '2026-07-21T14:20:00Z',
+      projects: [
+        {
+          id: 'proj-01',
+          name: 'auth-api',
+          appId: 'app-01',
+          osTarget: 'linux',
+          runtime: 'Node.js 20',
+          status: 'healthy',
+          replicas: 3,
+          targetReplicas: 4,
+          cpuLimitRatio: 0.65,
+          memoryUsageMb: 540,
+          latencyP95Ms: 120,
+          throughputRps: 140,
+          errorRatePercent: 0.8,
+          lastDeployedAt: '2026-07-31T09:45:00Z'
+        },
+        {
+          id: 'proj-02',
+          name: 'payment-worker',
+          appId: 'app-01',
+          osTarget: 'windows',
+          runtime: 'Python 3.12',
+          status: 'degraded',
+          replicas: 2,
+          targetReplicas: 2,
+          cpuLimitRatio: 0.72,
+          memoryUsageMb: 620,
+          latencyP95Ms: 210,
+          throughputRps: 72,
+          errorRatePercent: 1.9,
+          lastDeployedAt: '2026-07-31T10:12:00Z'
+        }
+      ]
+    }
+  ];
+
+  constructor(public state: OrchestrationStateService) {}
 }
