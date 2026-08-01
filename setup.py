@@ -6,10 +6,13 @@ from __future__ import annotations
 import argparse
 import logging
 import os
+import re
 import shutil
 import subprocess
 import sys
+import urllib.request
 import venv
+import zipfile
 from pathlib import Path
 from typing import List, Optional
 
@@ -23,6 +26,8 @@ REPO_ROOT = Path(__file__).resolve().parent
 BACKEND_DIR = REPO_ROOT / "backend" / "fastapi"
 FRONTEND_DIR = REPO_ROOT / "frontend"
 VENV_DIR = REPO_ROOT / ".venv"
+NGINX_DIR = REPO_ROOT / "tools" / "nginx"
+NGINX_ZIP_PATH = NGINX_DIR / "nginx.zip"
 
 def run_command(command: List[str], cwd: Optional[Path] = None, env: Optional[dict] = None) -> None:
     logger.info(f"> {' '.join(command)}")
@@ -88,6 +93,112 @@ def install_frontend_dependencies(npm_executable: str) -> None:
     logger.info("Installing frontend dependencies...")
     run_command([npm_executable, "install", "--prefix", str(FRONTEND_DIR), "--no-audit", "--no-fund"], cwd=REPO_ROOT)
 
+
+def build_frontend_production(npm_executable: str) -> None:
+    logger.info("Building the Angular frontend for production...")
+    run_command([npm_executable, "run", "build"], cwd=FRONTEND_DIR)
+
+
+def build_nginx_download_url(version: str) -> str:
+    return f"https://nginx.org/download/nginx-{version}.zip"
+
+
+def extract_latest_nginx_version(download_page: str) -> str:
+    matches = re.findall(r"nginx-(\d+\.\d+\.\d+)\.zip", download_page)
+    if not matches:
+        raise RuntimeError("Could not determine the latest nginx release from nginx.org")
+    return sorted(matches, key=lambda value: tuple(int(part) for part in value.split(".")))[-1]
+
+
+def install_nginx_windows() -> None:
+    if os.name != "nt":
+        return
+
+    logger.info("Preparing nginx for Windows local installation...")
+    NGINX_DIR.mkdir(parents=True, exist_ok=True)
+
+    try:
+        with urllib.request.urlopen("https://nginx.org/download/") as response:
+            html = response.read().decode("utf-8", errors="replace")
+    except Exception as exc:  # pragma: no cover - network dependency
+        raise RuntimeError(f"Unable to query nginx.org for the latest release: {exc}") from exc
+
+    version = extract_latest_nginx_version(html)
+    download_url = build_nginx_download_url(version)
+    archive_path = NGINX_ZIP_PATH
+
+    logger.info(f"Downloading nginx {version} from {download_url}")
+    with urllib.request.urlopen(download_url) as response, archive_path.open("wb") as handle:
+        shutil.copyfileobj(response, handle)
+
+    logger.info("Extracting nginx archive...")
+    with zipfile.ZipFile(archive_path) as archive:
+        archive.extractall(NGINX_DIR)
+
+    extracted_root = next((path for path in NGINX_DIR.iterdir() if path.is_dir() and path.name.startswith("nginx-")), None)
+    if extracted_root is None:
+        raise RuntimeError("nginx archive did not contain an expected extracted directory")
+
+    nginx_exe = extracted_root / "nginx.exe"
+    if not nginx_exe.exists():
+        raise RuntimeError(f"nginx executable was not found at {nginx_exe}")
+
+    logger.info(f"nginx installed to {extracted_root}")
+
+
+def configure_frontend_nginx() -> None:
+    if os.name != "nt":
+        return
+
+    nginx_root = next((path for path in NGINX_DIR.iterdir() if path.is_dir() and path.name.startswith("nginx-")), None)
+    if nginx_root is None:
+        raise RuntimeError("nginx installation was not found; run setup.py again")
+
+    conf_path = nginx_root / "conf" / "nginx.conf"
+    if not conf_path.exists():
+        raise RuntimeError(f"nginx configuration file was not found at {conf_path}")
+
+    frontend_conf_template = FRONTEND_DIR / "nginx" / "default.conf"
+    if not frontend_conf_template.exists():
+        raise RuntimeError(f"Frontend nginx config was not found at {frontend_conf_template}")
+
+    conf_contents = conf_path.read_text(encoding="utf-8")
+    if 'include conf.d/*.conf;' not in conf_contents:
+        conf_contents = conf_contents.replace("http {", "http {\n    include conf.d/*.conf;\n")
+        conf_path.write_text(conf_contents, encoding="utf-8")
+
+    conf_dir = nginx_root / "conf" / "conf.d"
+    conf_dir.mkdir(parents=True, exist_ok=True)
+
+    frontend_root = FRONTEND_DIR / "dist" / "temp-app" / "browser"
+    frontend_conf = frontend_conf_template.read_text(encoding="utf-8")
+    frontend_conf = frontend_conf.replace("__PORT__", "4200")
+    frontend_conf = frontend_conf.replace("__FRONTEND_ROOT__", str(frontend_root).replace("\\", "/"))
+    (conf_dir / "default.conf").write_text(frontend_conf, encoding="utf-8")
+
+    logger.info(f"Configured nginx to serve the Angular frontend from {frontend_root}")
+
+
+def start_frontend_nginx_windows() -> None:
+    if os.name != "nt":
+        return
+
+    nginx_root = next((path for path in NGINX_DIR.iterdir() if path.is_dir() and path.name.startswith("nginx-")), None)
+    if nginx_root is None:
+        raise RuntimeError("nginx installation was not found; run setup.py again")
+
+    nginx_exe = nginx_root / "nginx.exe"
+    if not nginx_exe.exists():
+        raise RuntimeError(f"nginx executable was not found at {nginx_exe}")
+
+    config_path = nginx_root / "conf" / "nginx.conf"
+    if not config_path.exists():
+        raise RuntimeError(f"nginx configuration file was not found at {config_path}")
+
+    logger.info("Starting nginx to serve the Angular UI on http://localhost:4200")
+    subprocess.Popen([str(nginx_exe), "-c", str(config_path)], cwd=str(nginx_root), creationflags=subprocess.CREATE_NEW_CONSOLE)
+
+
 def create_cli_wrappers() -> None:
     logger.info("Creating platform CLI wrappers...")
     bat_path = REPO_ROOT / "platform.bat"
@@ -128,6 +239,10 @@ def main() -> int:
 
     install_backend_requirements(python_executable)
     install_frontend_dependencies(npm_cmd)
+    build_frontend_production(npm_cmd)
+    install_nginx_windows()
+    configure_frontend_nginx()
+    start_frontend_nginx_windows()
 
     create_cli_wrappers()
 
