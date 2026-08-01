@@ -32,6 +32,8 @@ python setup.py --check-only
 
 ## Production frontend serving
 
+On Windows, running the local setup script now downloads the latest nginx release, builds the Angular UI for production, and starts nginx so the UI is served at http://localhost:4200.
+
 To serve the UI in production mode with nginx, build and run the frontend container directly:
 
 ```bash
