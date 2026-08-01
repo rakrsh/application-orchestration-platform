@@ -221,3 +221,7 @@ __marimo__/
 platform
 platform.bat
 .platform_state.json
+tools\nginx\*
+tools\nginx
+nginx.zip
+nginx

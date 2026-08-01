@@ -3,3 +3,4 @@ dist/
 /.angular
 /.sass-cache
 package-lock.json
+nginx
