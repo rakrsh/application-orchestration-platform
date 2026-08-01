@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { AppCreationPayload, OperatingSystem } from '../../types/orchestration';
 
 @Component({
+  standalone: true,
   selector: 'app-create-app-wizard',
+  imports: [CommonModule, FormsModule],
   templateUrl: './create-app-wizard.component.html',
   styleUrls: ['./create-app-wizard.component.css']
 })

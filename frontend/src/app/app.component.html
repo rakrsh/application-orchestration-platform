@@ -5,9 +5,9 @@
       <app-overview-tab
         *ngIf="activeTab === 'overview'"
         [applications]="applications"
-        [osFilter]="state.osFilter$ | async"
-        [deploymentMode]="state.deploymentMode$ | async"
-        [persona]="state.persona$ | async"
+        [osFilter]="(state.osFilter$ | async) ?? 'all'"
+        [deploymentMode]="(state.deploymentMode$ | async) ?? 'kubernetes'"
+        [persona]="(state.persona$ | async) ?? 'platform-admin'"
       ></app-overview-tab>
 
       <app-create-app-wizard *ngIf="activeTab === 'create'"></app-create-app-wizard>

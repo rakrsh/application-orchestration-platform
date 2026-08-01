@@ -1,8 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Application, OperatingSystem, DeploymentMode, UserPersona } from '../../types/orchestration';
+import { ApplicationCardComponent } from './application-card.component';
 
 @Component({
+  standalone: true,
   selector: 'app-overview-tab',
+  imports: [CommonModule, ApplicationCardComponent],
   templateUrl: './overview-tab.component.html',
   styleUrls: ['./overview-tab.component.css']
 })

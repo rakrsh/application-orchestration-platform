@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { OrchestrationStateService } from '../../services/orchestration-state.service';
 import { DeploymentMode, OperatingSystem, UserPersona } from '../../types/orchestration';
 
 @Component({
+  standalone: true,
   selector: 'app-header',
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
@@ -27,7 +30,7 @@ export class HeaderComponent {
     { value: 'auditor', label: 'Auditor' }
   ];
 
-  tabs = [
+  tabs: Array<{ value: 'overview' | 'telemetry' | 'create'; label: string }> = [
     { value: 'overview', label: 'Overview' },
     { value: 'telemetry', label: 'Telemetry' },
     { value: 'create', label: 'Create App' }

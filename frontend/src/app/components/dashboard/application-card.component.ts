@@ -1,8 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Application, DeploymentMode, OperatingSystem, UserPersona, ProjectService } from '../../types/orchestration';
+import { ProjectCardComponent } from './project-card.component';
 
 @Component({
+  standalone: true,
   selector: 'app-application-card',
+  imports: [CommonModule, ProjectCardComponent],
   templateUrl: './application-card.component.html',
   styleUrls: ['./application-card.component.css']
 })

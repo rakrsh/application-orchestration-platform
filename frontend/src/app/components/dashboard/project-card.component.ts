@@ -1,8 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { DeploymentMode, OperatingSystem, ProjectService, UserPersona } from '../../types/orchestration';
+import { ReplicaSliderComponent } from './replica-slider.component';
 
 @Component({
+  standalone: true,
   selector: 'app-project-card',
+  imports: [CommonModule, ReplicaSliderComponent],
   templateUrl: './project-card.component.html',
   styleUrls: ['./project-card.component.css']
 })
