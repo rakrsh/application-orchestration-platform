@@ -19,6 +19,12 @@ This command starts:
 - The Angular frontend (running at `localhost:4200`)
 - Any asset services specified in `assets/service-manifest.json`
 
+For the production UI container, the repository also supports running the frontend through nginx via Docker Compose:
+```bash
+docker compose up -d frontend
+```
+This serves the built Angular bundle on `http://localhost:4200`.
+
 The CLI creates a `.platform_state.json` file to keep track of the process IDs, and all logs are written to the `logs/` directory.
 
 ## Stopping the Platform

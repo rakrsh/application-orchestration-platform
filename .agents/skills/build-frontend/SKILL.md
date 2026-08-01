@@ -26,3 +26,13 @@ npm run build
 ```
 
 This will compile the frontend artifacts into `frontend/dist/`.
+
+## Serving with nginx in Production
+The repository includes a production Docker image for the frontend that builds the Angular app and serves it with nginx. From the repository root, run:
+
+```bash
+docker compose build frontend
+docker compose up -d frontend
+```
+
+The production UI is then available at `http://localhost:4200`.

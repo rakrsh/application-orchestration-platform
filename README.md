@@ -30,6 +30,17 @@ For a prerequisite-only check without launching anything, run:
 python setup.py --check-only
 ```
 
+## Production frontend serving
+
+To serve the UI in production mode with nginx, build and run the frontend container directly:
+
+```bash
+docker compose build frontend
+docker compose up -d frontend
+```
+
+The UI will then be available at http://localhost:4200.
+
 ## Documentation
 
 The MkDocs documentation site is published to GitHub Pages through the GitHub Actions workflow in [.github/workflows/docs.yml](.github/workflows/docs.yml).
