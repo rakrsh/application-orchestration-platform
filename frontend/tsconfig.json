@@ -3,14 +3,14 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "es2020",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "baseUrl": "./"
+    "ignoreDeprecations": "6.0"
   },
   "angularCompilerOptions": {
     "enableIvy": true
