@@ -2,7 +2,9 @@
   <div class="project-card-top">
     <div>
       <p class="project-title">{{ project.name }}</p>
-      <p class="project-meta">{{ project.runtime }} · {{ project.osTarget | titlecase }} · {{ deploymentLabel }}</p>
+      <p class="project-meta">
+        {{ project.runtime }} · {{ project.osTarget | titlecase }} · {{ deploymentLabel }}
+      </p>
     </div>
     <div class="project-status" [ngClass]="project.status">{{ project.status }}</div>
   </div>

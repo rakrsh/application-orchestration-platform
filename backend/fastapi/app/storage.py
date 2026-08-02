@@ -96,12 +96,9 @@ class InMemoryAppStore:
 
 class DatabaseAppStore:
     def __init__(self, database_url: Optional[str] = None) -> None:
-        self.database_url = (
-            database_url
-            or os.getenv(
-                "DATABASE_URL",
-                "postgresql://appuser:apppass@postgres:5432/appdb",
-            )
+        self.database_url = database_url or os.getenv(
+            "DATABASE_URL",
+            "postgresql://appuser:apppass@postgres:5432/appdb",
         )
         if self.database_url.startswith("sqlite"):
             connect_args = {"check_same_thread": False}
@@ -146,11 +143,7 @@ class DatabaseAppStore:
 
     def list_applications(self) -> List[dict]:
         with self._session() as session:
-            rows = (
-                session.query(AppRecord)
-                .order_by(AppRecord.created_at.asc())
-                .all()
-            )
+            rows = session.query(AppRecord).order_by(AppRecord.created_at.asc()).all()
             return [self._row_to_app(row) for row in rows]
 
     def list_apps(self) -> List[dict]:

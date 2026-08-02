@@ -1,7 +1,9 @@
 <article class="app-card glass-panel">
   <button type="button" class="app-card-header" (click)="toggleExpand()">
     <div>
-      <p class="app-status" [ngClass]="application.status">{{ formatStatus(application.status) }}</p>
+      <p class="app-status" [ngClass]="application.status">
+        {{ formatStatus(application.status) }}
+      </p>
       <h3>{{ application.name }}</h3>
       <p class="app-description">{{ application.description }}</p>
     </div>

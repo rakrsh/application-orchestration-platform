@@ -64,9 +64,11 @@
 
   <div class="persona-note" *ngIf="personaValue !== 'platform-admin'">
     <span>
-      {{ personaValue === 'auditor'
-        ? 'Read-only audit mode active. Deployment mode and cluster controls are disabled.'
-        : 'Developer mode active. Deployment mode changes are limited.' }}
+      {{
+        personaValue === 'auditor'
+          ? 'Read-only audit mode active. Deployment mode and cluster controls are disabled.'
+          : 'Developer mode active. Deployment mode changes are limited.'
+      }}
     </span>
   </div>
 </section>

@@ -43,6 +43,16 @@ docker compose up -d frontend
 
 The UI will then be available at http://localhost:4200.
 
+## Observability
+
+The platform now supports OpenTelemetry-based tracing for the FastAPI backend and a basic frontend telemetry hook. To enable exporting spans, configure the OTLP endpoint before starting the backend:
+
+```powershell
+$env:OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4318"
+```
+
+The backend uses the `application-orchestration-platform` service name and emits spans for health checks, app listing, and app creation. The frontend emits a lightweight dashboard initialization span when the app bootstraps.
+
 ## Documentation
 
 The MkDocs documentation site is published to GitHub Pages through the GitHub Actions workflow in [.github/workflows/docs.yml](.github/workflows/docs.yml).

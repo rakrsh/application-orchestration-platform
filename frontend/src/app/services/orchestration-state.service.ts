@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { DeploymentMode, OperatingSystem, UserPersona } from '../types/orchestration';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrchestrationStateService {
   deploymentMode$ = new BehaviorSubject<DeploymentMode>('kubernetes');

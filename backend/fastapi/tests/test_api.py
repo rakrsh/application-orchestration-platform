@@ -3,10 +3,10 @@ import unittest
 
 os.environ.setdefault("DATABASE_URL", "sqlite:///:memory:")
 
-from fastapi.testclient import TestClient
+from fastapi.testclient import TestClient  # noqa: E402
 
-from backend.fastapi.app import storage
-from backend.fastapi.app.main import app as orchestration_app
+from backend.fastapi.app import storage  # noqa: E402
+from backend.fastapi.app.main import app as orchestration_app  # noqa: E402
 
 
 class OrchestrationStoreTests(unittest.TestCase):

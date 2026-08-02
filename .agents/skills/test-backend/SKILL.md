@@ -5,7 +5,7 @@ description: How to run unit tests and testing suites for the FastAPI backend.
 
 # Test Backend
 
-The backend is built with FastAPI and uses Pytest for unit testing. 
+The backend is built with FastAPI and uses Pytest for unit testing.
 
 ## Running Tests
 To run the backend test suite, navigate to the backend directory and run pytest:

@@ -1,6 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Application, DeploymentMode, OperatingSystem, UserPersona, ProjectService } from '../../types/orchestration';
+import {
+  Application,
+  DeploymentMode,
+  OperatingSystem,
+  UserPersona,
+  ProjectService,
+} from '../../types/orchestration';
 import { ProjectCardComponent } from './project-card.component';
 
 @Component({
@@ -8,7 +14,7 @@ import { ProjectCardComponent } from './project-card.component';
   selector: 'app-application-card',
   imports: [CommonModule, ProjectCardComponent],
   templateUrl: './application-card.component.html',
-  styleUrls: ['./application-card.component.css']
+  styleUrls: ['./application-card.component.css'],
 })
 export class ApplicationCardComponent {
   @Input() application!: Application;
@@ -26,7 +32,7 @@ export class ApplicationCardComponent {
     if (this.osFilter === 'all') {
       return this.application.projects;
     }
-    return this.application.projects.filter(project => project.osTarget === this.osFilter);
+    return this.application.projects.filter((project) => project.osTarget === this.osFilter);
   }
 
   get aggregatedCpu(): string {

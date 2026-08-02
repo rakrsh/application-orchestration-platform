@@ -127,7 +127,18 @@ flowchart TD
     ProjectCard --> Slider
 ```
 
-## 7. Sequence diagrams
+## 7. Observability architecture
+
+```mermaid
+flowchart LR
+    Web[Angular SPA] -->|trace event| API[FastAPI Backend]
+    API -->|OTLP spans| Collector[OTLP Collector / backend]
+    Collector -->|visualization| Observability[Grafana / Jaeger / Tempo]
+```
+
+The OpenTelemetry pipeline is intentionally lightweight: the backend auto-instruments FastAPI request handling and emits explicit spans for key app lifecycle operations, while the frontend emits a bootstrap span from the Angular shell. When `OTEL_EXPORTER_OTLP_ENDPOINT` is set, the backend exports spans to an OTLP HTTP receiver.
+
+## 8. Sequence diagrams
 
 ### 7.1 Application creation via Git import
 

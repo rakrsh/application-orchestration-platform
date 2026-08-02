@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { trace } from '@opentelemetry/api';
 import { Application } from './types/orchestration';
 import { OrchestrationStateService } from './services/orchestration-state.service';
+
+const tracer = trace.getTracer('aop-frontend');
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: false
+  standalone: false,
 })
 export class AppComponent {
   applications: Application[] = [
@@ -33,7 +36,7 @@ export class AppComponent {
           latencyP95Ms: 120,
           throughputRps: 140,
           errorRatePercent: 0.8,
-          lastDeployedAt: '2026-07-31T09:45:00Z'
+          lastDeployedAt: '2026-07-31T09:45:00Z',
         },
         {
           id: 'proj-02',
@@ -49,11 +52,16 @@ export class AppComponent {
           latencyP95Ms: 210,
           throughputRps: 72,
           errorRatePercent: 1.9,
-          lastDeployedAt: '2026-07-31T10:12:00Z'
-        }
-      ]
-    }
+          lastDeployedAt: '2026-07-31T10:12:00Z',
+        },
+      ],
+    },
   ];
 
-  constructor(public state: OrchestrationStateService) {}
+  constructor(public state: OrchestrationStateService) {
+    tracer.startActiveSpan('dashboard.initialized', (span) => {
+      span.setAttribute('app.name', 'application-orchestration-platform');
+      span.end();
+    });
+  }
 }

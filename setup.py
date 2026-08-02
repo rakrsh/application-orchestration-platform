@@ -9,7 +9,6 @@ import os
 import re
 import shutil
 import subprocess
-import sys
 import urllib.request
 import venv
 import zipfile
@@ -17,8 +16,7 @@ from pathlib import Path
 from typing import List, Optional
 
 logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
 
@@ -29,11 +27,19 @@ VENV_DIR = REPO_ROOT / ".venv"
 NGINX_DIR = REPO_ROOT / "tools" / "nginx"
 NGINX_ZIP_PATH = NGINX_DIR / "nginx.zip"
 
-def run_command(command: List[str], cwd: Optional[Path] = None, env: Optional[dict] = None) -> None:
+
+def run_command(
+    command: List[str], cwd: Optional[Path] = None, env: Optional[dict] = None
+) -> None:
     logger.info(f"> {' '.join(command)}")
-    completed = subprocess.run(command, cwd=str(cwd) if cwd else None, env=env, check=False)
+    completed = subprocess.run(
+        command, cwd=str(cwd) if cwd else None, env=env, check=False
+    )
     if completed.returncode != 0:
-        raise RuntimeError(f"Command failed with exit code {completed.returncode}: {' '.join(command)}")
+        raise RuntimeError(
+            f"Command failed with exit code {completed.returncode}: {' '.join(command)}"
+        )
+
 
 def ensure_command(name: str) -> str:
     candidates = [name]
@@ -50,10 +56,12 @@ def ensure_command(name: str) -> str:
 
     raise RuntimeError(f"Required command not found on PATH: {name}")
 
+
 def python_executable_for_env(env_dir: Path) -> Path:
     if os.name == "nt":
         return env_dir / "Scripts" / "python.exe"
     return env_dir / "bin" / "python"
+
 
 def create_virtual_environment() -> Path:
     if VENV_DIR.exists() and not VENV_DIR.is_dir():
@@ -66,20 +74,35 @@ def create_virtual_environment() -> Path:
 
     python_executable = python_executable_for_env(VENV_DIR)
     if not python_executable.exists():
-        raise RuntimeError(f"Python virtual environment was not created successfully: {python_executable}")
+        raise RuntimeError(
+            f"Python virtual environment was not created successfully: {python_executable}"
+        )
 
     return python_executable
+
 
 def install_backend_requirements(python_executable: Path) -> None:
     logger.info("Installing backend dependencies...")
     run_command([str(python_executable), "-m", "pip", "install", "--upgrade", "pip"])
-    run_command([str(python_executable), "-m", "pip", "install", "-r", str(BACKEND_DIR / "requirements.txt")])
+    run_command(
+        [
+            str(python_executable),
+            "-m",
+            "pip",
+            "install",
+            "-r",
+            str(BACKEND_DIR / "requirements.txt"),
+        ]
+    )
+
 
 def clean_frontend_lockfiles() -> None:
-    logger.info("Cleaning frontend node_modules and package-lock.json to avoid peer dependency conflicts...")
+    logger.info(
+        "Cleaning frontend node_modules and package-lock.json to avoid peer dependency conflicts..."
+    )
     paths_to_remove = [
         FRONTEND_DIR / "node_modules",
-        FRONTEND_DIR / "package-lock.json"
+        FRONTEND_DIR / "package-lock.json",
     ]
     for p in paths_to_remove:
         if p.exists():
@@ -88,10 +111,21 @@ def clean_frontend_lockfiles() -> None:
             else:
                 p.unlink(missing_ok=True)
 
+
 def install_frontend_dependencies(npm_executable: str) -> None:
     clean_frontend_lockfiles()
     logger.info("Installing frontend dependencies...")
-    run_command([npm_executable, "install", "--prefix", str(FRONTEND_DIR), "--no-audit", "--no-fund"], cwd=REPO_ROOT)
+    run_command(
+        [
+            npm_executable,
+            "install",
+            "--prefix",
+            str(FRONTEND_DIR),
+            "--no-audit",
+            "--no-fund",
+        ],
+        cwd=REPO_ROOT,
+    )
 
 
 def build_frontend_production(npm_executable: str) -> None:
@@ -106,8 +140,12 @@ def build_nginx_download_url(version: str) -> str:
 def extract_latest_nginx_version(download_page: str) -> str:
     matches = re.findall(r"nginx-(\d+\.\d+\.\d+)\.zip", download_page)
     if not matches:
-        raise RuntimeError("Could not determine the latest nginx release from nginx.org")
-    return sorted(matches, key=lambda value: tuple(int(part) for part in value.split(".")))[-1]
+        raise RuntimeError(
+            "Could not determine the latest nginx release from nginx.org"
+        )
+    return sorted(
+        matches, key=lambda value: tuple(int(part) for part in value.split("."))
+    )[-1]
 
 
 def install_nginx_windows() -> None:
@@ -121,23 +159,36 @@ def install_nginx_windows() -> None:
         with urllib.request.urlopen("https://nginx.org/download/") as response:
             html = response.read().decode("utf-8", errors="replace")
     except Exception as exc:  # pragma: no cover - network dependency
-        raise RuntimeError(f"Unable to query nginx.org for the latest release: {exc}") from exc
+        raise RuntimeError(
+            f"Unable to query nginx.org for the latest release: {exc}"
+        ) from exc
 
     version = extract_latest_nginx_version(html)
     download_url = build_nginx_download_url(version)
     archive_path = NGINX_ZIP_PATH
 
     logger.info(f"Downloading nginx {version} from {download_url}")
-    with urllib.request.urlopen(download_url) as response, archive_path.open("wb") as handle:
+    with urllib.request.urlopen(download_url) as response, archive_path.open(
+        "wb"
+    ) as handle:
         shutil.copyfileobj(response, handle)
 
     logger.info("Extracting nginx archive...")
     with zipfile.ZipFile(archive_path) as archive:
         archive.extractall(NGINX_DIR)
 
-    extracted_root = next((path for path in NGINX_DIR.iterdir() if path.is_dir() and path.name.startswith("nginx-")), None)
+    extracted_root = next(
+        (
+            path
+            for path in NGINX_DIR.iterdir()
+            if path.is_dir() and path.name.startswith("nginx-")
+        ),
+        None,
+    )
     if extracted_root is None:
-        raise RuntimeError("nginx archive did not contain an expected extracted directory")
+        raise RuntimeError(
+            "nginx archive did not contain an expected extracted directory"
+        )
 
     nginx_exe = extracted_root / "nginx.exe"
     if not nginx_exe.exists():
@@ -150,7 +201,14 @@ def configure_frontend_nginx() -> None:
     if os.name != "nt":
         return
 
-    nginx_root = next((path for path in NGINX_DIR.iterdir() if path.is_dir() and path.name.startswith("nginx-")), None)
+    nginx_root = next(
+        (
+            path
+            for path in NGINX_DIR.iterdir()
+            if path.is_dir() and path.name.startswith("nginx-")
+        ),
+        None,
+    )
     if nginx_root is None:
         raise RuntimeError("nginx installation was not found; run setup.py again")
 
@@ -160,11 +218,15 @@ def configure_frontend_nginx() -> None:
 
     frontend_conf_template = FRONTEND_DIR / "nginx" / "default.conf"
     if not frontend_conf_template.exists():
-        raise RuntimeError(f"Frontend nginx config was not found at {frontend_conf_template}")
+        raise RuntimeError(
+            f"Frontend nginx config was not found at {frontend_conf_template}"
+        )
 
     conf_contents = conf_path.read_text(encoding="utf-8")
-    if 'include conf.d/*.conf;' not in conf_contents:
-        conf_contents = conf_contents.replace("http {", "http {\n    include conf.d/*.conf;\n")
+    if "include conf.d/*.conf;" not in conf_contents:
+        conf_contents = conf_contents.replace(
+            "http {", "http {\n    include conf.d/*.conf;\n"
+        )
         conf_path.write_text(conf_contents, encoding="utf-8")
 
     conf_dir = nginx_root / "conf" / "conf.d"
@@ -173,7 +235,9 @@ def configure_frontend_nginx() -> None:
     frontend_root = FRONTEND_DIR / "dist" / "temp-app" / "browser"
     frontend_conf = frontend_conf_template.read_text(encoding="utf-8")
     frontend_conf = frontend_conf.replace("__PORT__", "4200")
-    frontend_conf = frontend_conf.replace("__FRONTEND_ROOT__", str(frontend_root).replace("\\", "/"))
+    frontend_conf = frontend_conf.replace(
+        "__FRONTEND_ROOT__", str(frontend_root).replace("\\", "/")
+    )
     (conf_dir / "default.conf").write_text(frontend_conf, encoding="utf-8")
 
     logger.info(f"Configured nginx to serve the Angular frontend from {frontend_root}")
@@ -183,7 +247,14 @@ def start_frontend_nginx_windows() -> None:
     if os.name != "nt":
         return
 
-    nginx_root = next((path for path in NGINX_DIR.iterdir() if path.is_dir() and path.name.startswith("nginx-")), None)
+    nginx_root = next(
+        (
+            path
+            for path in NGINX_DIR.iterdir()
+            if path.is_dir() and path.name.startswith("nginx-")
+        ),
+        None,
+    )
     if nginx_root is None:
         raise RuntimeError("nginx installation was not found; run setup.py again")
 
@@ -196,7 +267,11 @@ def start_frontend_nginx_windows() -> None:
         raise RuntimeError(f"nginx configuration file was not found at {config_path}")
 
     logger.info("Starting nginx to serve the Angular UI on http://localhost:4200")
-    subprocess.Popen([str(nginx_exe), "-c", str(config_path)], cwd=str(nginx_root), creationflags=subprocess.CREATE_NEW_CONSOLE)
+    subprocess.Popen(
+        [str(nginx_exe), "-c", str(config_path)],
+        cwd=str(nginx_root),
+        creationflags=subprocess.CREATE_NEW_CONSOLE,
+    )
 
 
 def create_cli_wrappers() -> None:
@@ -215,17 +290,25 @@ def create_cli_wrappers() -> None:
     if os.name != "nt":
         os.chmod(sh_path, 0o755)
 
+
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Bootstrap the platform for local development")
-    parser.add_argument("--check-only", action="store_true", help="Validate prerequisites without starting services")
+    parser = argparse.ArgumentParser(
+        description="Bootstrap the platform for local development"
+    )
+    parser.add_argument(
+        "--check-only",
+        action="store_true",
+        help="Validate prerequisites without starting services",
+    )
     return parser.parse_args()
+
 
 def main() -> int:
     args = parse_args()
 
     logger.info(f"Repository root: {REPO_ROOT}")
 
-    python_cmd = ensure_command("python")
+    ensure_command("python")
     npm_cmd = ensure_command("npm")
 
     if args.check_only:
@@ -251,6 +334,7 @@ def main() -> int:
     logger.info("  Run 'platform stop' to stop running services.")
     logger.info("  Run 'platform uninstall' to clean up dependencies.")
     return 0
+
 
 if __name__ == "__main__":
     try:

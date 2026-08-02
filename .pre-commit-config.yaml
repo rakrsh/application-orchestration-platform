@@ -12,33 +12,34 @@ repos:
     hooks:
       - id: python-black
         name: black (format Python)
-        entry: python -m black backend/ --quiet
-        language: system
+        entry: black backend/ --quiet
+        language: python
+        additional_dependencies: [black]
         types: [python]
+        pass_filenames: false
       - id: python-isort
         name: isort (sort imports)
-        entry: python -m isort backend/ --profile black
-        language: system
+        entry: isort backend/ --profile black
+        language: python
+        additional_dependencies: [isort]
         types: [python]
+        pass_filenames: false
       - id: python-flake8
         name: flake8 (lint Python)
-        entry: python -m flake8 backend/
-        language: system
+        entry: flake8 backend/
+        language: python
+        additional_dependencies: [flake8]
         types: [python]
+        pass_filenames: false
 
 # Frontend formatting + linting using npm (runs only for files under frontend/)
-      - id: npm-install-frontend
-        name: npm ci (frontend dependencies)
-        entry: npm ci --prefix frontend
-        language: system
-        always_run: false
       - id: npm-lint-frontend
         name: npm run lint (frontend)
-        entry: npm run lint --prefix frontend
+        entry: bash -lc 'cd frontend && npm run lint'
         language: system
         files: ^frontend/.*\.(ts|html|css|scss|js)$
       - id: npm-format-frontend
         name: npm run format (frontend)
-        entry: npm run format --prefix frontend
+        entry: bash -lc 'cd frontend && npm run format'
         language: system
         files: ^frontend/.*\.(ts|html|css|scss|js)$

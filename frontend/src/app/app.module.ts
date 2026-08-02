@@ -17,8 +17,8 @@ import { CreateAppWizardComponent } from './components/dashboard/create-app-wiza
     ApplicationCardComponent,
     ProjectCardComponent,
     ReplicaSliderComponent,
-    CreateAppWizardComponent
+    CreateAppWizardComponent,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

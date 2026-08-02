@@ -3,10 +3,29 @@ import os
 from app.storage import DatabaseAppStore
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
+from opentelemetry import trace
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+from opentelemetry.sdk.resources import Resource
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from pydantic import BaseModel, Field
 
 app = FastAPI(title="CapOS FastAPI Stub")
 app_store = DatabaseAppStore(os.getenv("DATABASE_URL"))
+
+resource = Resource.create({"service.name": "application-orchestration-platform"})
+provider = TracerProvider(resource=resource)
+
+endpoint = os.getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
+if endpoint:
+    exporter = OTLPSpanExporter(endpoint=f"{endpoint}/v1/traces")
+    provider.add_span_processor(BatchSpanProcessor(exporter))
+
+trace.set_tracer_provider(provider)
+FastAPIInstrumentor.instrument_app(app)
+
+tracer = trace.get_tracer(__name__)
 
 
 @app.middleware("http")
@@ -19,9 +38,7 @@ async def auth_header_middleware(request: Request, call_next):
             content={"detail": "Missing X-Auth-Request-User header"},
         )
     request.state.user = user
-    request.state.roles = (
-        [r.strip() for r in roles.split(",")] if roles else []
-    )
+    request.state.roles = [r.strip() for r in roles.split(",")] if roles else []
     return await call_next(request)
 
 
@@ -38,12 +55,18 @@ class AppIn(BaseModel):
 
 @app.get("/health")
 async def health():
-    return {"status": "ok"}
+    with tracer.start_as_current_span("health.check") as span:
+        span.set_attribute("service.name", "application-orchestration-platform")
+        return {"status": "ok"}
 
 
 @app.get("/api/apps")
 async def list_apps(request: Request):
-    return app_store.list_apps()
+    with tracer.start_as_current_span("apps.list") as span:
+        span.set_attribute(
+            "user", request.state.user if hasattr(request.state, "user") else "unknown"
+        )
+        return app_store.list_apps()
 
 
 @app.get("/api/orchestration")
@@ -103,7 +126,14 @@ async def create_app(payload: AppIn, request: Request):
     roles = request.state.roles
     if not any(r in roles for r in ("admin", "editor")):
         raise HTTPException(status_code=403, detail="insufficient role")
-    return app_store.create_app(
-        payload=payload.model_dump() if hasattr(payload, "model_dump") else payload.dict(),
-        owner=payload.owner or request.state.user,
-    )
+    with tracer.start_as_current_span("apps.create") as span:
+        span.set_attribute("app.name", payload.name)
+        span.set_attribute("app.environment", payload.environment)
+        return app_store.create_app(
+            payload=(
+                payload.model_dump()
+                if hasattr(payload, "model_dump")
+                else payload.dict()
+            ),
+            owner=payload.owner or request.state.user,
+        )

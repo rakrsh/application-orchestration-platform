@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-replica-slider',
   imports: [CommonModule],
   templateUrl: './replica-slider.component.html',
-  styleUrls: ['./replica-slider.component.css']
+  styleUrls: ['./replica-slider.component.css'],
 })
 export class ReplicaSliderComponent {
   @Input() value = 1;

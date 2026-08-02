@@ -8,7 +8,7 @@ import { AppCreationPayload, OperatingSystem } from '../../types/orchestration';
   selector: 'app-create-app-wizard',
   imports: [CommonModule, FormsModule],
   templateUrl: './create-app-wizard.component.html',
-  styleUrls: ['./create-app-wizard.component.css']
+  styleUrls: ['./create-app-wizard.component.css'],
 })
 export class CreateAppWizardComponent {
   activeStep: 'git' | 'zip' = 'git';
@@ -22,7 +22,7 @@ export class CreateAppWizardComponent {
     zipFile: null,
     targetOs: 'linux',
     detectedRuntime: undefined,
-    envVariables: {}
+    envVariables: {},
   };
   dropMessage = 'Drag and drop a ZIP bundle here, or click to browse.';
   runtimeHint = '';
@@ -72,12 +72,15 @@ export class CreateAppWizardComponent {
   }
 
   syncEnvVariables() {
-    this.payload.envVariables = this.envRows.reduce((acc, row) => {
-      if (row.key.trim()) {
-        acc[row.key] = row.value;
-      }
-      return acc;
-    }, {} as Record<string, string>);
+    this.payload.envVariables = this.envRows.reduce(
+      (acc, row) => {
+        if (row.key.trim()) {
+          acc[row.key] = row.value;
+        }
+        return acc;
+      },
+      {} as Record<string, string>
+    );
   }
 
   onEnvKeyChange(index: number, value: string) {

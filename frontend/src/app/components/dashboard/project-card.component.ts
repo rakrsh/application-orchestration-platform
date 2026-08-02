@@ -1,6 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DeploymentMode, OperatingSystem, ProjectService, UserPersona } from '../../types/orchestration';
+import {
+  DeploymentMode,
+  OperatingSystem,
+  ProjectService,
+  UserPersona,
+} from '../../types/orchestration';
 import { ReplicaSliderComponent } from './replica-slider.component';
 
 @Component({
@@ -8,7 +13,7 @@ import { ReplicaSliderComponent } from './replica-slider.component';
   selector: 'app-project-card',
   imports: [CommonModule, ReplicaSliderComponent],
   templateUrl: './project-card.component.html',
-  styleUrls: ['./project-card.component.css']
+  styleUrls: ['./project-card.component.css'],
 })
 export class ProjectCardComponent {
   @Input() project!: ProjectService;

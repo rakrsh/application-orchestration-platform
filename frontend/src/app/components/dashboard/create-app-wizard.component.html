@@ -1,14 +1,22 @@
 <section class="wizard-shell glass-panel">
   <div class="wizard-tabs">
-    <button type="button" [class.active]="activeStep === 'git'" (click)="selectStep('git')">Git Repository URL</button>
-    <button type="button" [class.active]="activeStep === 'zip'" (click)="selectStep('zip')">Upload ZIP Bundle</button>
+    <button type="button" [class.active]="activeStep === 'git'" (click)="selectStep('git')">
+      Git Repository URL
+    </button>
+    <button type="button" [class.active]="activeStep === 'zip'" (click)="selectStep('zip')">
+      Upload ZIP Bundle
+    </button>
   </div>
 
   <div class="wizard-content">
     <ng-container *ngIf="activeStep === 'git'">
       <div class="field-group">
         <label>Repository URL</label>
-        <input type="text" [(ngModel)]="payload.gitUrl" placeholder="https://github.com/owner/repo" />
+        <input
+          type="text"
+          [(ngModel)]="payload.gitUrl"
+          placeholder="https://github.com/owner/repo"
+        />
       </div>
       <div class="field-group split">
         <div>
@@ -17,7 +25,11 @@
         </div>
         <div>
           <label>Buildfile path</label>
-          <input type="text" [(ngModel)]="payload.buildfilePath" placeholder="Dockerfile or build.yaml" />
+          <input
+            type="text"
+            [(ngModel)]="payload.buildfilePath"
+            placeholder="Dockerfile or build.yaml"
+          />
         </div>
       </div>
       <div class="field-group">
@@ -30,11 +42,7 @@
     </ng-container>
 
     <ng-container *ngIf="activeStep === 'zip'">
-      <div
-        class="dropzone"
-        (drop)="onDrop($event)"
-        (dragover)="onDragOver($event)"
-      >
+      <div class="dropzone" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
         <p>{{ dropMessage }}</p>
         <input type="file" accept=".zip,.tar.gz" (change)="handleFileInput($event)" />
       </div>

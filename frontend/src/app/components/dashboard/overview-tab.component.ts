@@ -1,6 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Application, OperatingSystem, DeploymentMode, UserPersona } from '../../types/orchestration';
+import {
+  Application,
+  OperatingSystem,
+  DeploymentMode,
+  UserPersona,
+} from '../../types/orchestration';
 import { ApplicationCardComponent } from './application-card.component';
 
 @Component({
@@ -8,7 +13,7 @@ import { ApplicationCardComponent } from './application-card.component';
   selector: 'app-overview-tab',
   imports: [CommonModule, ApplicationCardComponent],
   templateUrl: './overview-tab.component.html',
-  styleUrls: ['./overview-tab.component.css']
+  styleUrls: ['./overview-tab.component.css'],
 })
 export class OverviewTabComponent {
   @Input() applications: Application[] = [];
@@ -21,6 +26,8 @@ export class OverviewTabComponent {
       return this.applications;
     }
 
-    return this.applications.filter(app => app.projects.some(project => project.osTarget === this.osFilter));
+    return this.applications.filter((app) =>
+      app.projects.some((project) => project.osTarget === this.osFilter)
+    );
   }
 }

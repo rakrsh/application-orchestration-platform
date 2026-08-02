@@ -15,6 +15,10 @@ This section documents the platform architecture and the major components in the
 
 The full detailed architecture guide, including system context, container diagrams, component maps, sequence diagrams, class diagrams, flow diagrams, and edge-case scenarios, lives in the repository architecture notes at [architecture/C4_architecture.md](https://github.com/rakrsh/application-orchestration-platform/blob/main/architecture/C4_architecture.md).
 
+## Observability summary
+
+The platform includes a lightweight OpenTelemetry pipeline for backend request tracing and frontend bootstrap instrumentation. The backend exports spans to an OTLP HTTP endpoint when `OTEL_EXPORTER_OTLP_ENDPOINT` is configured, and the frontend emits a dashboard initialization event that can be correlated with backend traces.
+
 ## Summary view
 
 ```mermaid
