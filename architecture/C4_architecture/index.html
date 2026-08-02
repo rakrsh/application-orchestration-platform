@@ -430,6 +430,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#full-architecture-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full architecture reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design principles
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -759,6 +792,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#full-architecture-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full architecture reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design principles
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -790,7 +856,23 @@
 <li>OpenFGA for fine-grained authorization</li>
 <li>PostgreSQL for shared persistence</li>
 </ul>
-<p>The full system context and container view are maintained in the repository architecture notes.</p>
+<h2 id="full-architecture-reference">Full architecture reference<a class="headerlink" href="#full-architecture-reference" title="Permanent link">&para;</a></h2>
+<p>The full detailed architecture guide, including system context, container diagrams, component maps, sequence diagrams, class diagrams, flow diagrams, and edge-case scenarios, lives in the repository architecture notes at <a href="https://github.com/rakrsh/application-orchestration-platform/blob/main/architecture/C4_architecture.md">architecture/C4_architecture.md</a>.</p>
+<h2 id="summary-view">Summary view<a class="headerlink" href="#summary-view" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>flowchart LR
+    User[Platform User] --&gt; Proxy[oauth2-proxy]
+    Proxy --&gt; Web[Angular SPA]
+    Web --&gt; API[FastAPI Backend]
+    API --&gt; DB[(PostgreSQL)]
+    API --&gt; Auth[Keycloak / OpenFGA]
+</code></pre></div>
+<h2 id="design-principles">Design principles<a class="headerlink" href="#design-principles" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Keep frontend state and backend state separate.</li>
+<li>Enforce persona-based access control for every mutation path.</li>
+<li>Make deployment-mode terminology and resource labels dynamic.</li>
+<li>Preserve auditability and failure visibility for create, scale, and deploy actions.</li>
+</ul>
 
 
 
