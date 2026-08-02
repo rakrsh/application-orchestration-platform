@@ -442,6 +442,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#observability-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#summary-view" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -804,6 +815,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#observability-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#summary-view" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -858,6 +880,8 @@
 </ul>
 <h2 id="full-architecture-reference">Full architecture reference<a class="headerlink" href="#full-architecture-reference" title="Permanent link">&para;</a></h2>
 <p>The full detailed architecture guide, including system context, container diagrams, component maps, sequence diagrams, class diagrams, flow diagrams, and edge-case scenarios, lives in the repository architecture notes at <a href="https://github.com/rakrsh/application-orchestration-platform/blob/main/architecture/C4_architecture.md">architecture/C4_architecture.md</a>.</p>
+<h2 id="observability-summary">Observability summary<a class="headerlink" href="#observability-summary" title="Permanent link">&para;</a></h2>
+<p>The platform includes a lightweight OpenTelemetry pipeline for backend request tracing and frontend bootstrap instrumentation. The backend exports spans to an OTLP HTTP endpoint when <code>OTEL_EXPORTER_OTLP_ENDPOINT</code> is configured, and the frontend emits a dashboard initialization event that can be correlated with backend traces.</p>
 <h2 id="summary-view">Summary view<a class="headerlink" href="#summary-view" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>flowchart LR
     User[Platform User] --&gt; Proxy[oauth2-proxy]
