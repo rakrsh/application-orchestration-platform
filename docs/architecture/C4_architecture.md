@@ -13,7 +13,7 @@ This section documents the platform architecture and the major components in the
 
 ## Full architecture reference
 
-The full detailed architecture guide, including system context, container diagrams, component maps, sequence diagrams, class diagrams, flow diagrams, and edge-case scenarios, lives in the repository architecture notes at [architecture/C4_architecture.md](../../architecture/C4_architecture.md).
+The full detailed architecture guide, including system context, container diagrams, component maps, sequence diagrams, class diagrams, flow diagrams, and edge-case scenarios, lives in the repository architecture notes at [architecture/C4_architecture.md](https://github.com/rakrsh/application-orchestration-platform/blob/main/architecture/C4_architecture.md).
 
 ## Summary view
 
