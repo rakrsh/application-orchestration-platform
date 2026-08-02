@@ -35,6 +35,7 @@ The repository now includes a new Angular orchestration dashboard in `frontend/s
   - Deployment mode changes should modify UI terminology (pods vs containers vs services).
   - OS filters should update the visible project/service list.
   - ZIP upload should support drag-and-drop and show selected file metadata.
+- When changing dashboard behavior, cross-reference the full architecture guide in `architecture/C4_architecture.md` to ensure the UI remains aligned with the platform boundaries and edge-case handling.
 
 ## Running and Testing
 
