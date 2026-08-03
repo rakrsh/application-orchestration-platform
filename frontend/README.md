@@ -1,6 +1,6 @@
-# Angular Frontend (minimal scaffold)
+# Angular Frontend
 
-This folder contains a minimal Angular application scaffold.
+This folder contains the Angular orchestration dashboard for the platform, including the overview experience and the new telemetry view.
 
 Quick start:
 
@@ -12,6 +12,12 @@ npx ng serve --open
 ```
 
 This will start the dev server at http://localhost:4200.
+
+Once the app is running, use the header tabs to switch between:
+
+- Overview for application and service cards
+- Telemetry for the Jaeger-style trace view and Aspire-style resource dashboard
+- Create App for the application creation wizard
 
 If you prefer to use a global Angular CLI installation, run `ng serve` instead of `npx ng serve`.
 

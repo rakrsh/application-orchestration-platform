@@ -21,6 +21,8 @@ python setup.py --check-only
 - Build the FastAPI image: `docker compose build fastapi`
 - View running services: `docker compose ps`
 - Stop the stack: `docker compose down`
+- Open the local dashboard: http://localhost:4200
+- Open the telemetry experience: http://localhost:4200 and switch to the Telemetry tab
 
 ## Documentation build
 

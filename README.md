@@ -45,13 +45,19 @@ The UI will then be available at http://localhost:4200.
 
 ## Observability
 
-The platform now supports OpenTelemetry-based tracing for the FastAPI backend and a basic frontend telemetry hook. To enable exporting spans, configure the OTLP endpoint before starting the backend:
+The platform now includes a built-in observability experience with a Jaeger-style trace view and an Aspire-style resource dashboard. After starting the stack, open the Angular UI and switch to the Telemetry tab to inspect:
+
+- recent Jaeger-like traces for backend operations such as app listing and app creation
+- Aspire-style resource cards for the FastAPI API, Angular UI, and database service
+- health and alert summaries that mirror the current platform status
+
+The backend uses OpenTelemetry tracing for health checks, app listing, and app creation. To enable exporting spans to an OTLP collector, configure the endpoint before starting the backend:
 
 ```powershell
 $env:OTEL_EXPORTER_OTLP_ENDPOINT="http://localhost:4318"
 ```
 
-The backend uses the `application-orchestration-platform` service name and emits spans for health checks, app listing, and app creation. The frontend emits a lightweight dashboard initialization span when the app bootstraps.
+The frontend also emits a lightweight dashboard initialization span when the app bootstraps.
 
 ## Documentation
 
