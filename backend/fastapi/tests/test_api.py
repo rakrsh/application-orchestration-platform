@@ -76,6 +76,23 @@ class OrchestrationStoreTests(unittest.TestCase):
         self.assertEqual(payload["environment"], "production")
         self.assertEqual(payload["targetOs"], "windows")
 
+    def test_telemetry_endpoint_exposes_jaeger_and_aspire_data(self):
+        client = TestClient(orchestration_app)
+        response = client.get(
+            "/api/telemetry",
+            headers={
+                "x-auth-request-user": "alice",
+                "x-auth-request-roles": "admin",
+            },
+        )
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertIn("jaeger", payload)
+        self.assertIn("aspire", payload)
+        self.assertGreaterEqual(len(payload["jaeger"]["traces"]), 1)
+        self.assertGreaterEqual(len(payload["aspire"]["resources"]), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

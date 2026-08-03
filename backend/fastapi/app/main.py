@@ -1,4 +1,8 @@
 import os
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app.storage import DatabaseAppStore
 from fastapi import FastAPI, HTTPException, Request
@@ -119,6 +123,83 @@ async def orchestration_payload(request: Request):
             "p95LatencyMs": 195,
         },
     }
+
+
+@app.get("/api/telemetry")
+async def telemetry_payload(request: Request):
+    with tracer.start_as_current_span("telemetry.dashboard") as span:
+        span.set_attribute("user", request.state.user if hasattr(request.state, "user") else "unknown")
+        return {
+            "jaeger": {
+                "service": "application-orchestration-platform",
+                "traceCount": 6,
+                "latencyP95Ms": 182,
+                "traces": [
+                    {
+                        "id": "trace-001",
+                        "operation": "apps.list",
+                        "durationMs": 48,
+                        "status": "ok",
+                        "timestamp": "2026-08-03T15:10:00Z",
+                        "service": "fastapi",
+                    },
+                    {
+                        "id": "trace-002",
+                        "operation": "apps.create",
+                        "durationMs": 92,
+                        "status": "ok",
+                        "timestamp": "2026-08-03T15:12:00Z",
+                        "service": "fastapi",
+                    },
+                    {
+                        "id": "trace-003",
+                        "operation": "dashboard.initialized",
+                        "durationMs": 15,
+                        "status": "ok",
+                        "timestamp": "2026-08-03T15:13:00Z",
+                        "service": "frontend",
+                    },
+                ],
+            },
+            "aspire": {
+                "dashboard": "Aspire Dashboard",
+                "healthScore": 94,
+                "resources": [
+                    {
+                        "name": "fastapi-api",
+                        "type": "container",
+                        "state": "running",
+                        "health": "healthy",
+                        "cpuPercent": 24,
+                        "memoryMb": 512,
+                        "endpoints": ["http://localhost:8000"],
+                    },
+                    {
+                        "name": "angular-ui",
+                        "type": "container",
+                        "state": "running",
+                        "health": "healthy",
+                        "cpuPercent": 16,
+                        "memoryMb": 320,
+                        "endpoints": ["http://localhost:4200"],
+                    },
+                    {
+                        "name": "postgres",
+                        "type": "database",
+                        "state": "running",
+                        "health": "healthy",
+                        "cpuPercent": 8,
+                        "memoryMb": 640,
+                        "endpoints": ["postgres://postgres:5432/appdb"],
+                    },
+                ],
+                "alerts": [
+                    "Trace export healthy",
+                    "Frontend boot completed",
+                    "Database connections stable",
+                ],
+            },
+        }
 
 
 @app.post("/api/apps", status_code=201)

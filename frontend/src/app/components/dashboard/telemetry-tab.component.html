@@ -1,0 +1,65 @@
+<section class="telemetry-shell glass-panel">
+  <div class="section-header">
+    <div>
+      <p class="eyebrow">Observability</p>
+      <h2>Jaeger + Aspire dashboard</h2>
+    </div>
+    <span class="status-pill" *ngIf="!loading">Live</span>
+  </div>
+
+  <div *ngIf="loading" class="empty-state">Loading observability feed…</div>
+
+  <div *ngIf="!loading && telemetry" class="telemetry-grid">
+    <article class="card">
+      <div class="card-header">
+        <h3>Jaeger traces</h3>
+        <span>{{ telemetry.jaeger.traceCount }} spans</span>
+      </div>
+      <div class="metric-row">
+        <div>
+          <p class="metric-label">Service</p>
+          <strong>{{ telemetry.jaeger.service }}</strong>
+        </div>
+        <div>
+          <p class="metric-label">p95 latency</p>
+          <strong>{{ telemetry.jaeger.latencyP95Ms }} ms</strong>
+        </div>
+      </div>
+      <ul class="trace-list">
+        <li *ngFor="let trace of telemetry.jaeger.traces">
+          <div>
+            <strong>{{ trace.operation }}</strong>
+            <p>{{ trace.service }} • {{ trace.timestamp }}</p>
+          </div>
+          <span class="trace-badge">{{ trace.durationMs }} ms</span>
+        </li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card-header">
+        <h3>Aspire resources</h3>
+        <span>{{ telemetry.aspire.healthScore }}% health</span>
+      </div>
+      <div class="metric-row">
+        <div>
+          <p class="metric-label">Dashboard</p>
+          <strong>{{ telemetry.aspire.dashboard }}</strong>
+        </div>
+      </div>
+      <ul class="resource-list">
+        <li *ngFor="let resource of telemetry.aspire.resources">
+          <div>
+            <strong>{{ resource.name }}</strong>
+            <p>{{ resource.type }} • {{ resource.state }}</p>
+          </div>
+          <span class="trace-badge">{{ resource.health }}</span>
+        </li>
+      </ul>
+      <div class="alerts">
+        <p class="metric-label">Alerts</p>
+        <p *ngFor="let alert of telemetry.aspire.alerts">• {{ alert }}</p>
+      </div>
+    </article>
+  </div>
+</section>

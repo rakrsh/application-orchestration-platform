@@ -19,6 +19,10 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+:host ::ng-deep app-telemetry-tab {
+  display: block;
+}
+
 .eyebrow {
   margin: 0 0 0.5rem;
   color: #94a3b8;

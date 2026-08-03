@@ -12,11 +12,7 @@
 
       <app-create-app-wizard *ngIf="activeTab === 'create'"></app-create-app-wizard>
 
-      <section *ngIf="activeTab === 'telemetry'" class="telemetry-panel glass-panel">
-        <p class="eyebrow">Telemetry</p>
-        <h2>Platform monitoring coming soon</h2>
-        <p>Live charts and health wave metrics will appear here once telemetry is enabled.</p>
-      </section>
+      <app-telemetry-tab *ngIf="activeTab === 'telemetry'" ></app-telemetry-tab>
     </ng-container>
   </main>
 </div>
