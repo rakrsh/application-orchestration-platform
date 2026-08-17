@@ -44,6 +44,8 @@ Provide repository-specific guidance for Copilot and contributors working on thi
 - Prefer small, idempotent scripts for local setup and build tasks.
 - Keep environment-specific behavior explicit in scripts and docs.
 - Use repository-relative paths rather than hard-coded absolute paths.
+- **CI / GitHub Actions:** Always use the latest available major versions of GitHub Actions (e.g., `actions/checkout@v7`).
+- **CI / GitHub Actions:** Do not use deprecated wrappers like `semgrep-action`; prefer invoking CLI tools (e.g., `pip install semgrep && semgrep scan`) directly within CI steps.
 
 ## Dependency management
 - Keep dependencies declared in the most local place that makes sense:

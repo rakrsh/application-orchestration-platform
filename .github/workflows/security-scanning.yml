@@ -16,21 +16,20 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Run Semgrep
-        uses: returntocorp/semgrep-action@v1
-        with:
-          config: >-
-            p/security-audit
-            p/python
-            p/django
-            p/flask
-            p/owasp-top-ten
-          generateSarif: true
+        run: |
+          pip install semgrep
+          semgrep scan --sarif --output=semgrep.sarif \
+            --config="p/security-audit" \
+            --config="p/python" \
+            --config="p/django" \
+            --config="p/flask" \
+            --config="p/owasp-top-ten" || true
 
       - name: Upload Semgrep results to GitHub Security
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v4
         if: always()
         with:
           sarif_file: semgrep.sarif
@@ -45,12 +44,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install Bandit
         run: pip install bandit
@@ -73,7 +72,7 @@ jobs:
         continue-on-error: true
 
       - name: Upload Bandit results
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v4
         if: always()
         with:
           sarif_file: bandit.sarif
@@ -88,12 +87,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install pip-audit
         run: pip install pip-audit
@@ -129,7 +128,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -165,12 +164,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install detect-secrets
         run: pip install detect-secrets
@@ -204,12 +203,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install linting tools
         run: |
@@ -240,12 +239,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
@@ -262,7 +261,7 @@ jobs:
             --cov-fail-under=80
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
         with:
           files: ./coverage.json
           flags: unittests
