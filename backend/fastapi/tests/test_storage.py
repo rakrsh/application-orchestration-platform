@@ -1,22 +1,15 @@
-import unittest
-
 from backend.fastapi.app import storage
 
 
-class InMemoryAppStoreTests(unittest.TestCase):
-    def test_create_and_list_apps(self):
-        store = storage.InMemoryAppStore()
+def test_create_and_list_apps():
+    store = storage.InMemoryAppStore()
 
-        created = store.create_app(
-            name="demo-app",
-            description="demo",
-            owner="alice",
-        )
+    created = store.create_app(
+        name="demo-app",
+        description="demo",
+        owner="alice",
+    )
 
-        self.assertEqual(created["name"], "demo-app")
-        self.assertEqual(created["owner"], "alice")
-        self.assertEqual(store.list_apps(), [created])
-
-
-if __name__ == "__main__":
-    unittest.main()
+    assert created["name"] == "demo-app"
+    assert created["owner"] == "alice"
+    assert store.list_apps() == [created]

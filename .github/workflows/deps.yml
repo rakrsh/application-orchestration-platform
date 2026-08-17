@@ -1,0 +1,38 @@
+name: Dependency Scanning
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  pip-audit:
+    name: Pip Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run pip-audit
+        run: |
+          pip install pip-audit
+          pip-audit -r backend/fastapi/requirements.txt
+  
+  npm-audit:
+    name: NPM Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run npm audit
+        working-directory: ./frontend
+        run: npm audit --audit-level=high

@@ -1,0 +1,28 @@
+name: SBOM Generation
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  generate-sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          
+      - name: Install cyclonedx-bom
+        run: pip install cyclonedx-bom
+
+      - name: Generate Python SBOM
+        run: cyclonedx-bom -r backend/fastapi/requirements.txt -o sbom-python.json -format json
+        
+      - name: Upload Python SBOM to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: sbom-python.json
