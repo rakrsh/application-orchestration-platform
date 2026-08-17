@@ -1,0 +1,2650 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the application orchestration platform">
+      
+      
+        <meta name="author" content="CapOS">
+      
+      
+      
+        <link rel="prev" href="../CRA_EXECUTIVE_SUMMARY/">
+      
+      
+        <link rel="next" href="../SECURITY_REQUIREMENTS/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Quickstart Checklist - Application Orchestration Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eu-cybersecurity-resilience-act-cra-quick-start-checklist" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Application Orchestration Platform" class="md-header__button md-logo" aria-label="Application Orchestration Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Application Orchestration Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quickstart Checklist
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rakrsh/application-orchestration-platform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rakrsh/application-orchestration-platform
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/C4_architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../backend/fastapi/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Backend
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../frontend/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Frontend
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../auth/KEYCLOAK_README/" class="md-tabs__link">
+          
+  
+  
+  Auth
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../development-guide/" class="md-tabs__link">
+          
+  
+  
+  Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../COMPLIANCE_CRA_PLAN/" class="md-tabs__link">
+          
+  
+  
+  Security & Compliance
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Application Orchestration Platform" class="md-nav__button md-logo" aria-label="Application Orchestration Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Application Orchestration Platform
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rakrsh/application-orchestration-platform" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rakrsh/application-orchestration-platform
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/C4_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/fastapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auth
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Auth
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auth/KEYCLOAK_README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keycloak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auth/OAUTH2_PROXY_README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAuth2 Proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auth/OPENFGA_README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenFGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security & Compliance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security & Compliance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COMPLIANCE_CRA_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRA Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CRA_EXECUTIVE_SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Executive Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart Checklist
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-checklist-high-level-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Executive Checklist (High-Level Milestones)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Executive Checklist (High-Level Milestones)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-foundation-weeks-16-critical-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Foundation (Weeks 1–6) – CRITICAL PATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-governance-audit-weeks-710-high-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Governance &amp; Audit (Weeks 7–10) – HIGH PRIORITY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-operations-monitoring-weeks-11-continuous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Operations &amp; Monitoring (Weeks 11+) – CONTINUOUS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-week-by-week-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Detailed Week-by-Week Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Detailed Week-by-Week Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week-1-ssdlc-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WEEK 1: SSDLC &amp; Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WEEK 1: SSDLC &amp; Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-11-security-requirements-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.1: Security Requirements Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-12-threat-model-stride" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.2: Threat Model (STRIDE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-13-code-review-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.3: Code Review Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-14-github-branch-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.4: GitHub Branch Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-23-security-testing-sast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WEEK 2–3: Security Testing &amp; SAST
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WEEK 2–3: Security Testing &amp; SAST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-21-pytest-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.1: Pytest Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-22-add-sast-scanning-semgrep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.2: Add SAST Scanning (Semgrep)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-23-dependency-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.3: Dependency Scanning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-24-container-scanning-trivy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.4: Container Scanning (Trivy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-34-sbom-dependency-locking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WEEK 3–4: SBOM &amp; Dependency Locking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WEEK 3–4: SBOM &amp; Dependency Locking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-31-generate-lock-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.1: Generate Lock Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-32-sbom-generation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.2: SBOM Generation Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-33-sbom-cicd-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.3: SBOM CI/CD Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-34-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.4: Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-42-create-securitytxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.2: Create security.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-43-github-security-advisories-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.3: GitHub Security Advisories Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-44-incident-response-runbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.4: Incident Response Runbook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-matrix-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Compliance Matrix (Quick Reference)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 How to Use This Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SECURITY_REQUIREMENTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/THREAT_MODEL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SECURE_CODING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secure Coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BUILD_RELEASE_PROCESS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build & Release Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SECURITY_TESTING_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SBOM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBOM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vulnerability Disclosure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VULNERABILITY_ASSESSMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vulnerability Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INCIDENT_RESPONSE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Incident Response
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-checklist-high-level-milestones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Executive Checklist (High-Level Milestones)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Executive Checklist (High-Level Milestones)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-foundation-weeks-16-critical-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Foundation (Weeks 1–6) – CRITICAL PATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-governance-audit-weeks-710-high-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Governance &amp; Audit (Weeks 7–10) – HIGH PRIORITY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-operations-monitoring-weeks-11-continuous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Operations &amp; Monitoring (Weeks 11+) – CONTINUOUS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-week-by-week-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Detailed Week-by-Week Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Detailed Week-by-Week Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week-1-ssdlc-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WEEK 1: SSDLC &amp; Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WEEK 1: SSDLC &amp; Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-11-security-requirements-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.1: Security Requirements Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-12-threat-model-stride" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.2: Threat Model (STRIDE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-13-code-review-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.3: Code Review Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-14-github-branch-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1.4: GitHub Branch Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-23-security-testing-sast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WEEK 2–3: Security Testing &amp; SAST
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WEEK 2–3: Security Testing &amp; SAST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-21-pytest-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.1: Pytest Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-22-add-sast-scanning-semgrep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.2: Add SAST Scanning (Semgrep)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-23-dependency-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.3: Dependency Scanning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-24-container-scanning-trivy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2.4: Container Scanning (Trivy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-34-sbom-dependency-locking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WEEK 3–4: SBOM &amp; Dependency Locking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WEEK 3–4: SBOM &amp; Dependency Locking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-31-generate-lock-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.1: Generate Lock Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-32-sbom-generation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.2: SBOM Generation Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-33-sbom-cicd-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.3: SBOM CI/CD Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-34-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3.4: Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-42-create-securitytxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.2: Create security.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-43-github-security-advisories-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.3: GitHub Security Advisories Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-44-incident-response-runbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4.4: Incident Response Runbook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-matrix-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Compliance Matrix (Quick Reference)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 How to Use This Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eu-cybersecurity-resilience-act-cra-quick-start-checklist">EU Cybersecurity Resilience Act (CRA) — Quick Start &amp; Checklist<a class="headerlink" href="#eu-cybersecurity-resilience-act-cra-quick-start-checklist" title="Permanent link">&para;</a></h1>
+<p><strong>Purpose:</strong> Fast-track compliance checklist and week-by-week implementation guide<br />
+<strong>Status:</strong> Active Implementation Phase 1<br />
+<strong>Last Updated:</strong> 2026-08-18</p>
+<hr />
+<h2 id="executive-checklist-high-level-milestones">🎯 Executive Checklist (High-Level Milestones)<a class="headerlink" href="#executive-checklist-high-level-milestones" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-foundation-weeks-16-critical-path">Phase 1: Foundation (Weeks 1–6) – <em>CRITICAL PATH</em><a class="headerlink" href="#phase-1-foundation-weeks-16-critical-path" title="Permanent link">&para;</a></h3>
+<p><strong>Week 1–2: SSDLC &amp; Threat Model</strong>
+- [ ] Create <code>docs/SECURITY_REQUIREMENTS.md</code> (SSDLC overview, design principles)
+- [ ] Create <code>docs/architecture/THREAT_MODEL.md</code> (STRIDE analysis of all components)
+- [ ] Implement code review policy (2+ approvers for security-sensitive code)
+- [ ] Enable branch protection on <code>main</code> (require reviews, status checks)</p>
+<p><strong>Week 2–3: Security Testing</strong>
+- [ ] Migrate to pytest with coverage reporting (target ≥80% for critical paths)
+- [ ] Add SAST scanning to CI/CD (.github/workflows/sast.yml)
+- [ ] Add dependency scanning: pip-audit, npm audit (.github/workflows/deps.yml)
+- [ ] Add container scanning: Trivy (.github/workflows/container-scan.yml)</p>
+<p><strong>Week 3–4: SBOM &amp; Dependency Locking</strong>
+- [ ] Generate dependency lock files (requirements.lock via pip-tools, package-lock.json)
+- [ ] Add SBOM generation (cyclonedx-bom, syft) to release workflow
+- [ ] Configure Dependabot for automated dependency PRs
+- [ ] Create <code>docs/SBOM.md</code> (where to find, interpretation guide)</p>
+<p><strong>Week 4–6: Vulnerability Management</strong>
+- [ ] Publish <code>docs/SECURITY.md</code> (vulnerability disclosure policy, reporting instructions)
+- [ ] Create <code>.well-known/security.txt</code> (RFC 9110 compliant security contact)
+- [ ] Set up GitHub Security Advisories
+- [ ] Create <code>docs/INCIDENT_RESPONSE.md</code> (detection, escalation, notification)</p>
+<hr />
+<h3 id="phase-2-governance-audit-weeks-710-high-priority">Phase 2: Governance &amp; Audit (Weeks 7–10) – <em>HIGH PRIORITY</em><a class="headerlink" href="#phase-2-governance-audit-weeks-710-high-priority" title="Permanent link">&para;</a></h3>
+<p><strong>Week 7–8: Security Documentation</strong>
+- [ ] Complete threat model with data flow analysis
+- [ ] Create <code>docs/DATA_PROTECTION.md</code> (encryption, retention, GDPR compliance)
+- [ ] Create <code>docs/HARDENING.md</code> (production security checklist)
+- [ ] Create <code>docs/KNOWN_ISSUES.md</code> (track CVEs, workarounds)</p>
+<p><strong>Week 8–9: Audit Logging &amp; Secrets</strong>
+- [ ] Implement structured audit logging (auth, authz, data changes)
+- [ ] Add audit endpoints (GET /audit-logs with filtering/search)
+- [ ] Remove hardcoded secrets from docker-compose.yml
+- [ ] Create .env.example with placeholder values
+- [ ] Add secrets scanning to CI/CD (detect-secrets)</p>
+<p><strong>Week 9–10: Access Control &amp; Review</strong>
+- [ ] Document RBAC model and OpenFGA policies
+- [ ] Implement least privilege review (reduce default permissions)
+- [ ] Create access provisioning checklist (onboarding/offboarding)
+- [ ] Schedule quarterly access reviews</p>
+<hr />
+<h3 id="phase-3-operations-monitoring-weeks-11-continuous">Phase 3: Operations &amp; Monitoring (Weeks 11+) – <em>CONTINUOUS</em><a class="headerlink" href="#phase-3-operations-monitoring-weeks-11-continuous" title="Permanent link">&para;</a></h3>
+<p><strong>Week 11–12: Security Monitoring</strong>
+- [ ] Configure alerting for auth failures, policy violations
+- [ ] Build security dashboard (real-time event tracking)
+- [ ] Document alert thresholds and escalation</p>
+<p><strong>Week 12–13: Patch Management</strong>
+- [ ] Automate security patches (Dependabot configured)
+- [ ] Create patch testing workflow
+- [ ] Document patch release process
+- [ ] Set 30-day SLA for security patch deployment</p>
+<p><strong>Week 14–15: Supply Chain &amp; Compliance</strong>
+- [ ] Implement container image signing (cosign)
+- [ ] Generate SLSA provenance for builds
+- [ ] Create compliance matrix (CRA requirements → implemented controls)
+- [ ] Schedule third-party security audit</p>
+<hr />
+<h2 id="detailed-week-by-week-tasks">📋 Detailed Week-by-Week Tasks<a class="headerlink" href="#detailed-week-by-week-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="week-1-ssdlc-design"><strong>WEEK 1: SSDLC &amp; Design</strong><a class="headerlink" href="#week-1-ssdlc-design" title="Permanent link">&para;</a></h3>
+<h4 id="task-11-security-requirements-document">Task 1.1: Security Requirements Document<a class="headerlink" href="#task-11-security-requirements-document" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>File: docs/SECURITY_REQUIREMENTS.md
+Owner: [Architecture Lead]
+Time: 1 day
+Checklist:
+  ✓ Define secure coding principles (input validation, error handling, logging)
+  ✓ Document code review requirements
+  ✓ Define build &amp; release security gates
+  ✓ List approved development practices (testing, logging, secrets handling)
+  ✓ Define non-functional security requirements (encryption, audit trails)
+</code></pre></div>
+<p><strong>Template Start:</strong>
+<div class="highlight"><pre><span></span><code><span class="gh"># Security Requirements</span>
+
+<span class="gu">## Development Practices</span>
+<span class="k">-</span><span class="w"> </span>All code must pass SAST scanning before merge
+<span class="k">-</span><span class="w"> </span>Security-sensitive changes require security review
+<span class="k">-</span><span class="w"> </span>All endpoints must validate input via Pydantic models
+<span class="k">-</span><span class="w"> </span>No secrets (API keys, passwords) in code or logs
+<span class="k">-</span><span class="w"> </span>Audit all auth and policy decisions
+<span class="k">-</span><span class="w"> </span>Use parameterized SQL queries
+
+<span class="gu">## Code Review Policy</span>
+<span class="k">-</span><span class="w"> </span>Require 2+ approvals for code touching auth, storage, or policy
+<span class="k">-</span><span class="w"> </span>Security team reviews changes to encryption, secrets, or access control
+<span class="k">-</span><span class="w"> </span>Automated checks: SAST, linting, unit tests must pass
+
+<span class="gu">## Testing Requirements</span>
+<span class="k">-</span><span class="w"> </span>Unit test all API endpoints
+<span class="k">-</span><span class="w"> </span>Integration tests for auth flows
+<span class="k">-</span><span class="w"> </span>Code coverage ≥80% for critical paths
+<span class="k">-</span><span class="w"> </span>Load testing before major releases
+
+<span class="gu">## Deployment Requirements</span>
+<span class="k">-</span><span class="w"> </span>Container images signed with cosign
+<span class="k">-</span><span class="w"> </span>SBOM generated and published
+<span class="k">-</span><span class="w"> </span>Security scanning passes before push to registry
+<span class="k">-</span><span class="w"> </span>Secrets injected via environment variables, not config files
+</code></pre></div></p>
+<h4 id="task-12-threat-model-stride">Task 1.2: Threat Model (STRIDE)<a class="headerlink" href="#task-12-threat-model-stride" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>File: docs/architecture/THREAT_MODEL.md
+Owner: [Security Lead]
+Time: 2 days
+Approach: STRIDE analysis per component
+  ✓ Spoofing: Can attacker impersonate a user? (mitigation: OAuth2, Keycloak)
+  ✓ Tampering: Can attacker modify data in transit/at rest? (mitigation: TLS, auth checks)
+  ✓ Repudiation: Can attacker deny actions? (mitigation: audit logging)
+  ✓ Info Disclosure: Can attacker access sensitive data? (mitigation: encryption, RBAC)
+  ✓ DoS: Can attacker disrupt service? (mitigation: rate limiting, resource limits)
+  ✓ Elevation: Can attacker gain higher privileges? (mitigation: least privilege, RBAC)
+</code></pre></div>
+<p><strong>Threat Model Output Format:</strong>
+<div class="highlight"><pre><span></span><code>Component: FastAPI Backend
+STRIDE Analysis:
+  - Spoofing: Backend trusts X-Auth-Request-User header from OAuth2-Proxy
+    Threat: Proxy could be misconfigured, header spoofed
+    Mitigation: Validate header presence; sign headers with shared secret (TODO)
+    Status: OPEN (implement header signing)
+
+  - Tampering: API responses sent over HTTP (unencrypted)
+    Threat: Man-in-the-middle could intercept and modify data
+    Mitigation: Use HTTPS in production; validate TLS certificates
+    Status: IMPLEMENTED (HTTPS enforced)
+
+  - Info Disclosure: Unencrypted database connection
+    Threat: Credentials could be intercepted over network
+    Mitigation: Use encrypted connections (SSL/TLS for PostgreSQL)
+    Status: OPEN (add SSL/TLS to connection string)
+</code></pre></div></p>
+<h4 id="task-13-code-review-policy">Task 1.3: Code Review Policy<a class="headerlink" href="#task-13-code-review-policy" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>File: docs/SECURE_CODING.md
+Owner: [Backend Lead + Frontend Lead]
+Time: 1 day
+Checklist:
+  ✓ Define code review process (who reviews, when)
+  ✓ List security-sensitive code areas (auth, storage, policy, encryption)
+  ✓ Define review checklist for security changes
+  ✓ Document approval criteria
+  ✓ Define escalation path for security issues
+</code></pre></div>
+<p><strong>Example Review Checklist:</strong>
+<div class="highlight"><pre><span></span><code><span class="gh"># Security Code Review Checklist</span>
+
+<span class="gu">## Before Submitting PR</span>
+<span class="k">- [ ]</span> Input validation: All user inputs validated via Pydantic models
+<span class="k">- [ ]</span> Output encoding: No raw SQL; use parameterized queries
+<span class="k">- [ ]</span> Error handling: No stack traces or secrets in error messages
+<span class="k">- [ ]</span> Logging: Security events (auth, authz, data changes) are logged
+<span class="k">- [ ]</span> Secrets: No API keys, passwords, or tokens in code
+<span class="k">- [ ]</span> Dependencies: No new dependencies added without justification
+
+<span class="gu">## Reviewer Checklist</span>
+<span class="k">- [ ]</span> Code follows secure coding guidelines
+<span class="k">- [ ]</span> Security-sensitive functions have test coverage &gt;80%
+<span class="k">- [ ]</span> No new vulnerabilities introduced
+<span class="k">- [ ]</span> Changes align with threat model
+<span class="k">- [ ]</span> Audit logging added for data modifications
+
+<span class="gu">## Approval</span>
+<span class="k">-</span><span class="w"> </span>Security-sensitive changes: Require security team approval
+<span class="k">-</span><span class="w"> </span>Regular changes: Require 2+ peer reviews
+<span class="k">-</span><span class="w"> </span>Urgent patches: Expedited review; documented review waiver
+</code></pre></div></p>
+<h4 id="task-14-github-branch-protection">Task 1.4: GitHub Branch Protection<a class="headerlink" href="#task-14-github-branch-protection" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Enable on GitHub via Settings &gt; Branches &gt; main</span>
+<span class="w">  </span>✓<span class="w"> </span>Require<span class="w"> </span>pull<span class="w"> </span>request<span class="w"> </span>reviews<span class="w"> </span><span class="o">(</span><span class="m">2</span>+<span class="w"> </span>approvers<span class="o">)</span>
+<span class="w">  </span>✓<span class="w"> </span>Dismiss<span class="w"> </span>stale<span class="w"> </span>PR<span class="w"> </span>approvals
+<span class="w">  </span>✓<span class="w"> </span>Require<span class="w"> </span>status<span class="w"> </span>checks:<span class="w"> </span>CI<span class="w"> </span><span class="o">(</span>tests<span class="o">)</span>,<span class="w"> </span>SAST<span class="w"> </span><span class="o">(</span>Semgrep<span class="o">)</span>,<span class="w"> </span>Linting
+<span class="w">  </span>✓<span class="w"> </span>Require<span class="w"> </span>branches<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date<span class="w"> </span>before<span class="w"> </span>merging
+<span class="w">  </span>✓<span class="w"> </span>Include<span class="w"> </span>administrators<span class="w"> </span><span class="k">in</span><span class="w"> </span>restrictions
+<span class="w">  </span>✓<span class="w"> </span>Require<span class="w"> </span>signed<span class="w"> </span>commits
+</code></pre></div>
+<hr />
+<h3 id="week-23-security-testing-sast"><strong>WEEK 2–3: Security Testing &amp; SAST</strong><a class="headerlink" href="#week-23-security-testing-sast" title="Permanent link">&para;</a></h3>
+<h4 id="task-21-pytest-migration">Task 2.1: Pytest Migration<a class="headerlink" href="#task-21-pytest-migration" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>File: backend/fastapi/tests/
+Owner: [Backend Lead]
+Time: 2 days
+Checklist:
+  ✓ Install pytest: pip install pytest pytest-cov pytest-async
+  ✓ Convert unittest tests to pytest fixtures
+  ✓ Add coverage tracking: pytest --cov=app --cov-report=html
+  ✓ Set coverage threshold: 80% for critical paths
+  ✓ Add to CI/CD: .github/workflows/test.yml
+  ✓ Document testing guide in docs/TESTING.md
+</code></pre></div>
+<p><strong>pytest Configuration (pyproject.toml or pytest.ini):</strong>
+<div class="highlight"><pre><span></span><code><span class="k">[tool:pytest]</span>
+<span class="na">testpaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">backend/fastapi/tests</span>
+<span class="na">python_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">test_*.py</span>
+<span class="na">python_classes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Test*</span>
+<span class="na">python_functions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">test_*</span>
+<span class="na">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">--cov=backend.fastapi.app --cov-report=html --cov-report=term-missing</span>
+</code></pre></div></p>
+<h4 id="task-22-add-sast-scanning-semgrep">Task 2.2: Add SAST Scanning (Semgrep)<a class="headerlink" href="#task-22-add-sast-scanning-semgrep" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># File: .github/workflows/sast.yml</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SAST Scanning</span>
+
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">semgrep</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Semgrep</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">returntocorp/semgrep-action@v1</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">generateSarif</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">          </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">p/security-audit p/python p/django</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload SARIF</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github/codeql-action/upload-sarif@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">sarif_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">semgrep.sarif</span>
+
+<span class="w">  </span><span class="nt">bandit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Bandit</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install bandit</span>
+<span class="w">          </span><span class="no">bandit -r backend/fastapi/app/ -f json -o bandit-report.json</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload Bandit results</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github/codeql-action/upload-sarif@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">sarif_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bandit-report.json</span>
+</code></pre></div>
+<h4 id="task-23-dependency-scanning">Task 2.3: Dependency Scanning<a class="headerlink" href="#task-23-dependency-scanning" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># File: .github/workflows/deps.yml</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dependency Scanning</span>
+
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pip-audit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run pip-audit</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install pip-audit</span>
+<span class="w">          </span><span class="no">pip-audit --desc --skip-editable</span>
+<span class="w">        </span><span class="nt">continue-on-error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># Log issues but don't fail build initially</span>
+
+<span class="w">  </span><span class="nt">npm-audit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run npm audit</span>
+<span class="w">        </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npm audit --audit-level=moderate</span>
+<span class="w">        </span><span class="nt">continue-on-error</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<h4 id="task-24-container-scanning-trivy">Task 2.4: Container Scanning (Trivy)<a class="headerlink" href="#task-24-container-scanning-trivy" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># File: .github/workflows/container-scan.yml</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Container Image Scanning</span>
+
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">trivy-backend</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build Docker image</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker build -t app-backend:test backend/fastapi/</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Trivy scan</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aquasecurity/trivy-action@master</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">image-ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-backend:test</span>
+<span class="w">          </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sarif</span>
+<span class="w">          </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trivy-report.sarif</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload Trivy results</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github/codeql-action/upload-sarif@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">sarif_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trivy-report.sarif</span>
+</code></pre></div>
+<hr />
+<h3 id="week-34-sbom-dependency-locking"><strong>WEEK 3–4: SBOM &amp; Dependency Locking</strong><a class="headerlink" href="#week-34-sbom-dependency-locking" title="Permanent link">&para;</a></h3>
+<h4 id="task-31-generate-lock-files">Task 3.1: Generate Lock Files<a class="headerlink" href="#task-31-generate-lock-files" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Python: Create requirements.lock via pip-tools</span>
+pip<span class="w"> </span>install<span class="w"> </span>pip-tools
+<span class="nb">cd</span><span class="w"> </span>backend/fastapi/
+pip-compile<span class="w"> </span>requirements.txt<span class="w"> </span>-o<span class="w"> </span>requirements.lock
+
+<span class="c1"># Commit both:</span>
+git<span class="w"> </span>add<span class="w"> </span>requirements.txt<span class="w"> </span>requirements.lock
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Lock dependencies for reproducible builds"</span>
+
+<span class="c1"># Node/npm: Ensure package-lock.json is tracked</span>
+<span class="nb">cd</span><span class="w"> </span>frontend
+npm<span class="w"> </span>ci<span class="w">  </span><span class="c1"># Uses package-lock.json</span>
+git<span class="w"> </span>add<span class="w"> </span>package-lock.json
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Lock npm dependencies"</span>
+</code></pre></div>
+<h4 id="task-32-sbom-generation-script">Task 3.2: SBOM Generation Script<a class="headerlink" href="#task-32-sbom-generation-script" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># File: scripts/generate_sbom.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_sbom</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Generate CycloneDX SBOM for Python and Node dependencies."""</span>
+
+    <span class="c1"># Python SBOM</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="s2">"cyclonedx-bom"</span><span class="p">,</span>
+        <span class="s2">"-o"</span><span class="p">,</span> <span class="s2">"sbom-python.json"</span><span class="p">,</span>
+        <span class="s2">"-format"</span><span class="p">,</span> <span class="s2">"json"</span><span class="p">,</span>
+        <span class="s2">"backend/fastapi/requirements.lock"</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Node SBOM</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="s2">"cyclonedx-npm"</span><span class="p">,</span>
+        <span class="s2">"-o"</span><span class="p">,</span> <span class="s2">"sbom-node.json"</span><span class="p">,</span>
+        <span class="s2">"frontend/"</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Merge SBOMs (optional)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sbom-python.json"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">python_sbom</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sbom-node.json"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">node_sbom</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="c1"># Create merged SBOM metadata</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"bomFormat"</span><span class="p">:</span> <span class="s2">"CycloneDX"</span><span class="p">,</span>
+        <span class="s2">"specVersion"</span><span class="p">:</span> <span class="s2">"1.4"</span><span class="p">,</span>
+        <span class="s2">"version"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"metadata"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"timestamp"</span><span class="p">:</span> <span class="s2">"2026-08-18T00:00:00Z"</span><span class="p">,</span>
+            <span class="s2">"component"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Application Orchestration Platform"</span><span class="p">,</span>
+                <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">"components"</span><span class="p">:</span> <span class="n">python_sbom</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"components"</span><span class="p">,</span> <span class="p">[])</span> <span class="o">+</span> <span class="n">node_sbom</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"components"</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="p">}</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sbom-merged.json"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">merged</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✓ Generated SBOMs: sbom-python.json, sbom-node.json, sbom-merged.json"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">generate_sbom</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="task-33-sbom-cicd-integration">Task 3.3: SBOM CI/CD Integration<a class="headerlink" href="#task-33-sbom-cicd-integration" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># File: .github/workflows/sbom.yml</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SBOM Generation</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="s">'v*'</span><span class="w">  </span><span class="c1"># Only on version tags</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">sbom</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">'3.12'</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install SBOM tools</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install cyclonedx-bom</span>
+<span class="w">          </span><span class="no">npm install -g @cyclonedx/npm</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate SBOM</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python scripts/generate_sbom.py</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload SBOM to Release</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-release-asset@v1</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">upload_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ github.event.release.upload_url }}</span>
+<span class="w">          </span><span class="nt">asset_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./sbom-merged.json</span>
+<span class="w">          </span><span class="nt">asset_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sbom-${{ github.ref }}.json</span>
+<span class="w">          </span><span class="nt">asset_content_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">application/json</span>
+</code></pre></div>
+<h4 id="task-34-documentation">Task 3.4: Documentation<a class="headerlink" href="#task-34-documentation" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="gh"># File: docs/SBOM.md</span>
+
+<span class="gu">## Software Bill of Materials (SBOM)</span>
+
+<span class="gu">### What is an SBOM?</span>
+An SBOM is a complete inventory of all software components, dependencies, and libraries in the application.
+Format: CycloneDX JSON (industry standard, machine-readable)
+
+<span class="gu">### Where to Find</span>
+SBOMs are published with each release:
+<span class="k">-</span><span class="w"> </span>GitHub Releases: <span class="sb">`sbom-v{version}.json`</span>
+<span class="k">-</span><span class="w"> </span>Format: CycloneDX 1.4
+<span class="k">-</span><span class="w"> </span>Updated: Every release
+
+<span class="gu">### How to Use</span>
+```bash
+<span class="gh"># View components</span>
+jq '.components[] | {name, version}' sbom-v1.0.0.json
+
+<span class="gh"># Check for specific dependency</span>
+jq '.components[] | select(.name=="flask")' sbom-v1.0.0.json
+
+<span class="gh"># Compare with NIST NVD for vulnerabilities</span>
+<span class="gh"># See https://nvd.nist.gov/</span>
+</code></pre></div>
+<h3 id="license-information">License Information<a class="headerlink" href="#license-information" title="Permanent link">&para;</a></h3>
+<p>All third-party licenses are included in the SBOM.
+Review before deploying in regulated environments.</p>
+<h3 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h3>
+<p>SBOM updated with:
+- Every security patch
+- New dependency additions
+- Dependency version upgrades
+<div class="highlight"><pre><span></span><code>---
+
+### **WEEK 4–6: Vulnerability Management**
+
+#### Task 4.1: Vulnerability Disclosure Policy
+```markdown
+# File: docs/SECURITY.md
+
+# Security &amp; Vulnerability Disclosure
+
+## Reporting a Vulnerability
+
+If you discover a security vulnerability, please email **security@example.com** with:
+- Description of the vulnerability
+- Affected component(s) and versions
+- Steps to reproduce (if applicable)
+- Suggested fix (if known)
+
+**Do not** open a public GitHub issue for security vulnerabilities.
+
+## Coordinated Disclosure Timeline
+
+- **Immediate:** We acknowledge receipt within 24 hours
+- **3 days:** Initial assessment and severity rating
+- **7 days:** Proposed fix and timeline for patch
+- **Critical (CVSS 9–10):** Patch within 7 days; notify users
+- **High (CVSS 7–8):** Patch within 30 days; notify users
+- **Medium (CVSS 4–6):** Patch within 90 days; include in next release
+- **Low (CVSS 0–3):** Patch in next regular release
+
+## Severity Ratings (CVSS)
+
+| Severity | CVSS | Example | Timeline |
+|---|---|---|---|
+| Critical | 9.0–10.0 | RCE, auth bypass, data breach | 7 days |
+| High | 7.0–8.9 | Privilege escalation, DoS | 30 days |
+| Medium | 4.0–6.9 | Unauth info disclosure | 90 days |
+| Low | 0.0–3.9 | Low-impact bugs | Next release |
+
+## Supported Versions
+
+| Version | Status | Security Support Until |
+|---|---|---|
+| 1.x | Current | 2027-08-18 |
+| 0.x | Deprecated | 2026-08-18 |
+
+We recommend running the latest version.
+
+## Patch Release Process
+
+1. Fix validated by security team
+2. Fix reviewed by engineering team
+3. Tests added and pass
+4. Version bumped (patch: 1.0.0 → 1.0.1)
+5. Release published with security advisory
+6. Users notified via GitHub Advisories
+</code></pre></div></p>
+<h4 id="task-42-create-securitytxt">Task 4.2: Create security.txt<a class="headerlink" href="#task-42-create-securitytxt" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code># File: .well-known/security.txt (RFC 9110)
+
+Contact: security@example.com
+Expires: 2027-08-18T00:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://example.com/.well-known/security.txt
+Policy: https://example.com/docs/SECURITY.md
+Acknowledgments: https://example.com/docs/SECURITY.md#acknowledgments
+
+# Reporting Security Issues:
+# Email: security@example.com
+# Please do not disclose details publicly until we've had time to respond.
+</code></pre></div>
+<h4 id="task-43-github-security-advisories-setup">Task 4.3: GitHub Security Advisories Setup<a class="headerlink" href="#task-43-github-security-advisories-setup" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>Via GitHub UI:
+  1. Go to Settings &gt; Security &gt; Security advisories
+  2. Enable "Submit advisories"
+  3. On next release, create advisory:
+     - Title: "Security advisory: {issue}"
+     - Description: Impact, affected versions
+     - CVSS score (if applicable)
+     - Patch release version
+  4. Publish advisory
+  5. GitHub auto-notifies users of affected repos
+</code></pre></div>
+<h4 id="task-44-incident-response-runbook">Task 4.4: Incident Response Runbook<a class="headerlink" href="#task-44-incident-response-runbook" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="gh"># File: docs/INCIDENT_RESPONSE.md</span>
+
+<span class="gh"># Security Incident Response Plan</span>
+
+<span class="gu">## Overview</span>
+This document describes the process for detecting, responding to, and reporting security incidents.
+
+<span class="gu">## Severity Levels</span>
+
+| Level | Impact | Response Time | Example |
+|---|---|---|---|
+| <span class="gs">**Critical**</span> | Data breach, RCE, service down | 1 hour | Ransomware, active exploit |
+| <span class="gs">**High**</span> | Privilege escalation, auth bypass | 4 hours | Unauth access to admin panel |
+| <span class="gs">**Medium**</span> | Data exposure (limited), DoS | 1 day | Info leak, service slow |
+| <span class="gs">**Low**</span> | Minor security issue | 1 week | Weak crypto, missing log |
+
+<span class="gu">## Detection &amp; Triage</span>
+
+<span class="gs">**Who detects?**</span>
+<span class="k">-</span><span class="w"> </span>Automated alerts: Security monitoring (Prometheus, CloudWatch)
+<span class="k">-</span><span class="w"> </span>Manual reports: Users, security researchers (security@example.com)
+<span class="k">-</span><span class="w"> </span>Vulnerability scanning: Automated pipeline (SAST, deps)
+
+<span class="gs">**Triage checklist:**</span>
+<span class="k">- [ ]</span> Is the issue confirmed?
+<span class="k">- [ ]</span> What's the impact (confidentiality, integrity, availability)?
+<span class="k">- [ ]</span> How many users/systems affected?
+<span class="k">- [ ]</span> Is it actively being exploited?
+<span class="k">- [ ]</span> Assign severity level (Critical/High/Medium/Low)
+
+<span class="gu">## Response Process</span>
+
+<span class="gu">### Step 1: Acknowledge (within 1 hour for Critical)</span>
+<span class="k">-</span><span class="w"> </span>Email reporter: "We've received your report. We're investigating."
+<span class="k">-</span><span class="w"> </span>Internal: Create incident ticket with details
+
+<span class="gu">### Step 2: Investigate (within 4 hours for Critical)</span>
+<span class="k">-</span><span class="w"> </span>Reproduce the issue
+<span class="k">-</span><span class="w"> </span>Determine root cause
+<span class="k">-</span><span class="w"> </span>Assess impact scope
+<span class="k">-</span><span class="w"> </span>Update severity if needed
+
+<span class="gu">### Step 3: Develop Fix (target time by severity)</span>
+<span class="k">-</span><span class="w"> </span>Write fix and tests
+<span class="k">-</span><span class="w"> </span>Code review (expedited for Critical)
+<span class="k">-</span><span class="w"> </span>Deploy to staging
+<span class="k">-</span><span class="w"> </span>Validate fix
+
+<span class="gu">### Step 4: Release Patch</span>
+<span class="k">-</span><span class="w"> </span>Merge fix to main
+<span class="k">-</span><span class="w"> </span>Create patch release (e.g., 1.0.1)
+<span class="k">-</span><span class="w"> </span>Publish GitHub release and advisory
+<span class="k">-</span><span class="w"> </span>Update SBOM and known issues
+
+<span class="gu">### Step 5: Communicate &amp; Document</span>
+<span class="k">-</span><span class="w"> </span>Notify users of vulnerability and patch
+<span class="k">-</span><span class="w"> </span>Provide remediation steps (e.g., "Update to v1.0.1")
+<span class="k">-</span><span class="w"> </span>Document root cause and prevention in runbook
+<span class="k">-</span><span class="w"> </span>Update threat model if needed
+
+<span class="gu">## Escalation</span>
+
+<span class="gs">**Report to authorities if:**</span>
+<span class="k">-</span><span class="w"> </span>Critical vulnerability affecting multiple users
+<span class="k">-</span><span class="w"> </span>Data breach with &gt;100 records exposed
+<span class="k">-</span><span class="w"> </span>Active exploitation in the wild
+<span class="k">-</span><span class="w"> </span>Incident reported by government agency
+
+<span class="gs">**Who to notify:**</span>
+<span class="k">-</span><span class="w"> </span>EU-CERT / ENISA (if EU-based product)
+<span class="k">-</span><span class="w"> </span>Affected data protection authority (GDPR data breach)
+<span class="k">-</span><span class="w"> </span>Customers (within 72 hours per GDPR Article 33)
+
+<span class="gu">## Communication Template</span>
+
+<span class="gs">**Subject:**</span> [SECURITY] Patch Available: {Vulnerability Description}
+</code></pre></div>
+Dear Users,</p>
+<p>We've identified and fixed a security vulnerability in Application Orchestration Platform.</p>
+<p><strong>Vulnerability:</strong> {Description}
+<strong>Severity:</strong> {Critical/High/Medium/Low}
+<strong>Affected Versions:</strong> {e.g., v1.0.0, v1.0.1}
+<strong>Patched Version:</strong> {e.g., v1.0.2}</p>
+<p><strong>What you need to do:</strong>
+1. Update to v1.0.2 immediately
+2. Review audit logs for suspicious activity
+3. Reset any exposed credentials</p>
+<p><strong>For more details:</strong>
+- Security Advisory: [link to GitHub advisory]
+- SBOM: [link to SBOM]
+- Questions: security@example.com</p>
+<p>Thank you for using Application Orchestration Platform.
+<div class="highlight"><pre><span></span><code>## Post-Incident Review
+
+**Within 1 week, conduct postmortem:**
+- What went wrong?
+- How did we detect it?
+- How fast was our response?
+- What can we improve?
+- Update runbook with lessons learned
+
+---
+
+## Key Contacts
+
+| Role | Name | Email | Phone |
+|---|---|---|---|
+| Security Lead | [TBD] | security@example.com | [TBD] |
+| Engineering Lead | [TBD] | eng-lead@example.com | [TBD] |
+| Product Owner | [TBD] | product@example.com | [TBD] |
+| On-Call (24/7) | [TBD] | oncall@example.com | [TBD] |
+
+---
+
+## Testing
+
+Test this runbook quarterly:
+- [ ] Simulate a vulnerability report
+- [ ] Practice patch release process
+- [ ] Validate communication templates
+- [ ] Measure response time
+</code></pre></div></p>
+<hr />
+<h2 id="compliance-matrix-quick-reference">📋 Compliance Matrix (Quick Reference)<a class="headerlink" href="#compliance-matrix-quick-reference" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>CRA Requirement</th>
+<th>Implementation</th>
+<th>Status</th>
+<th>Owner</th>
+<th>Due</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Article 10: Secure Development</strong></td>
+<td>SSDLC, code review, threat model</td>
+<td>🔴 In Progress</td>
+<td>Arch Lead</td>
+<td>Week 2</td>
+</tr>
+<tr>
+<td><strong>Article 11: Security Testing</strong></td>
+<td>SAST, DAST, coverage &gt;80%</td>
+<td>🔴 In Progress</td>
+<td>Backend</td>
+<td>Week 3</td>
+</tr>
+<tr>
+<td><strong>Article 12: Vulnerability Mgmt</strong></td>
+<td>Disclosure policy, severity ratings</td>
+<td>🟡 Planned</td>
+<td>Security</td>
+<td>Week 4</td>
+</tr>
+<tr>
+<td><strong>Article 13: Incident Response</strong></td>
+<td>Runbook, escalation, communication</td>
+<td>🟡 Planned</td>
+<td>Security</td>
+<td>Week 6</td>
+</tr>
+<tr>
+<td><strong>Article 14: Documentation</strong></td>
+<td>Threat model, data protection, SBOM</td>
+<td>🟡 Planned</td>
+<td>All</td>
+<td>Week 8</td>
+</tr>
+<tr>
+<td><strong>Article 15: Update Support</strong></td>
+<td>Patch process, 30-day SLA</td>
+<td>🟡 Planned</td>
+<td>DevOps</td>
+<td>Week 12</td>
+</tr>
+<tr>
+<td><strong>Supply Chain (implicit)</strong></td>
+<td>SBOM, image signing, SLSA</td>
+<td>🟡 Planned</td>
+<td>DevOps</td>
+<td>Week 14</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="how-to-use-this-guide">🚀 How to Use This Guide<a class="headerlink" href="#how-to-use-this-guide" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Print or bookmark this page</strong> for daily reference</li>
+<li><strong>Assign owners</strong> to each task (update names in checklist)</li>
+<li><strong>Create GitHub issues</strong> from tasks (link to this guide)</li>
+<li><strong>Track progress</strong> weekly: update status (🔴 → 🟡 → 🟢)</li>
+<li><strong>Review bi-weekly</strong> with team; adjust timeline if needed</li>
+</ol>
+<hr />
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">EU Cyber Resilience Act (Official Text)</a></li>
+<li><a href="https://csrc.nist.gov/publications/detail/sp/800-218/final">NIST SSDF v1.1</a></li>
+<li><a href="https://cyclonedx.org/">CycloneDX SBOM Format</a></li>
+<li><a href="https://owasp.org/Top10/">OWASP Top 10</a></li>
+<li><a href="https://bestpractices.coreinfrastructure.org/">OpenSSF Best Practices Badge</a></li>
+</ul>
+<hr />
+<p><strong>Questions?</strong> Refer to <a href="../COMPLIANCE_CRA_PLAN/">docs/COMPLIANCE_CRA_PLAN.md</a> for detailed guidance.</p>
+<p><strong>Status:</strong> Updated 2026-08-18<br />
+<strong>Next Sync:</strong> Weekly (Fridays, 2 PM CET)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/rakrsh/application-orchestration-platform" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

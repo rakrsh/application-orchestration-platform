@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../KEYCLOAK_README/">
+        <link rel="prev" href="../../SECURITY_REQUIREMENTS/">
       
       
-        <link rel="next" href="../OPENFGA_README/">
+        <link rel="next" href="../../SECURE_CODING/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>OAuth2 Proxy - Application Orchestration Platform</title>
+        <title>Threat Model - Application Orchestration Platform</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#oauth2-proxy" class="md-skip">
+        <a href="#threat-model-stride" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OAuth2 Proxy
+              Threat Model
             
           </span>
         </div>
@@ -188,7 +188,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../architecture/C4_architecture/" class="md-tabs__link">
+      <a href="../C4_architecture/" class="md-tabs__link">
         
   
   
@@ -243,13 +243,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../KEYCLOAK_README/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../auth/KEYCLOAK_README/" class="md-tabs__link">
           
   
   
@@ -285,10 +283,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../COMPLIANCE_CRA_PLAN/" class="md-tabs__link">
           
   
@@ -380,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/C4_architecture/" class="md-nav__link">
+      <a href="../C4_architecture/" class="md-nav__link">
         
   
   
@@ -458,31 +458,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -500,7 +495,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -518,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../KEYCLOAK_README/" class="md-nav__link">
+      <a href="../../auth/KEYCLOAK_README/" class="md-nav__link">
         
   
   
@@ -543,37 +538,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    OAuth2 Proxy
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../auth/OAUTH2_PROXY_README/" class="md-nav__link">
         
   
   
@@ -589,37 +557,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#local-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local integration
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -632,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OPENFGA_README/" class="md-nav__link">
+      <a href="../../auth/OPENFGA_README/" class="md-nav__link">
         
   
   
@@ -751,26 +688,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -788,7 +730,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -915,10 +857,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../architecture/THREAT_MODEL/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -934,6 +903,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-architecture-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Architecture Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-stride-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. STRIDE Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1169,10 +1191,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#local-integration" class="md-nav__link">
+  <a href="#1-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Local integration
+        1. Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-architecture-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Architecture Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-stride-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. STRIDE Analysis
       
     </span>
   </a>
@@ -1199,10 +1243,57 @@
   
 
 
-<h1 id="oauth2-proxy">OAuth2 Proxy<a class="headerlink" href="#oauth2-proxy" title="Permanent link">&para;</a></h1>
-<p>OAuth2 Proxy is used to front the platform services with sign-in and session handling.</p>
-<h2 id="local-integration">Local integration<a class="headerlink" href="#local-integration" title="Permanent link">&para;</a></h2>
-<p>The proxy is configured to authenticate against the local Keycloak instance through the Docker Compose stack.</p>
+<h1 id="threat-model-stride">Threat Model (STRIDE)<a class="headerlink" href="#threat-model-stride" title="Permanent link">&para;</a></h1>
+<h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
+<p>This document describes the threat model for the Application Orchestration Platform. It uses the STRIDE methodology to identify threats and document mitigating controls.</p>
+<h2 id="2-architecture-context">2. Architecture Context<a class="headerlink" href="#2-architecture-context" title="Permanent link">&para;</a></h2>
+<p>The platform consists of:
+- <strong>Frontend (Angular):</strong> User dashboard for managing applications.
+- <strong>Backend (FastAPI):</strong> Core API handling business logic and storage.
+- <strong>Keycloak:</strong> Identity Provider (IdP).
+- <strong>OpenFGA:</strong> Fine-Grained Authorization engine.</p>
+<h2 id="3-stride-analysis">3. STRIDE Analysis<a class="headerlink" href="#3-stride-analysis" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Threat</th>
+<th>Description</th>
+<th>Mitigating Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spoofing</strong></td>
+<td>An attacker impersonates a valid user.</td>
+<td>OAuth2 + OIDC via Keycloak. Header-based auth validated by proxy.</td>
+</tr>
+<tr>
+<td><strong>Tampering</strong></td>
+<td>Data is modified in transit or at rest.</td>
+<td>HTTPS/TLS required for all communication. Internal services use secure channels.</td>
+</tr>
+<tr>
+<td><strong>Repudiation</strong></td>
+<td>A user denies performing an action (e.g., scaling an app).</td>
+<td>Comprehensive Audit Logging (Phase 2) will record user actions, timestamps, and IP addresses.</td>
+</tr>
+<tr>
+<td><strong>Information Disclosure</strong></td>
+<td>Sensitive data (secrets, tokens) is exposed.</td>
+<td>No hardcoded secrets. Proper <code>.dockerignore</code> and <code>.gitignore</code>.</td>
+</tr>
+<tr>
+<td><strong>Denial of Service</strong></td>
+<td>An attacker overwhelms the backend API.</td>
+<td>Rate limiting at the ingress/API gateway layer.</td>
+</tr>
+<tr>
+<td><strong>Elevation of Privilege</strong></td>
+<td>A user gains unauthorized access to resources.</td>
+<td>OpenFGA evaluates all access requests against formal policies. Least privilege defaults.</td>
+</tr>
+</tbody>
+</table>
 
 
 

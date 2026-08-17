@@ -13,28 +13,28 @@
       
       
       
-        <link rel="prev" href="../KEYCLOAK_README/">
+        <link rel="prev" href="../SBOM/">
       
       
-        <link rel="next" href="../OPENFGA_README/">
+        <link rel="next" href="../VULNERABILITY_ASSESSMENT/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>OAuth2 Proxy - Application Orchestration Platform</title>
+        <title>Vulnerability Disclosure - Application Orchestration Platform</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#oauth2-proxy" class="md-skip">
+        <a href="#security-policy" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Application Orchestration Platform" class="md-header__button md-logo" aria-label="Application Orchestration Platform" data-md-component="logo">
+    <a href=".." title="Application Orchestration Platform" class="md-header__button md-logo" aria-label="Application Orchestration Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OAuth2 Proxy
+              Vulnerability Disclosure
             
           </span>
         </div>
@@ -169,7 +169,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -188,7 +188,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../architecture/C4_architecture/" class="md-tabs__link">
+      <a href="../architecture/C4_architecture/" class="md-tabs__link">
         
   
   
@@ -207,7 +207,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../backend/fastapi/" class="md-tabs__link">
+      <a href="../backend/fastapi/" class="md-tabs__link">
         
   
   
@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../frontend/" class="md-tabs__link">
+      <a href="../frontend/" class="md-tabs__link">
         
   
   
@@ -243,13 +243,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../KEYCLOAK_README/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../auth/KEYCLOAK_README/" class="md-tabs__link">
           
   
   
@@ -269,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../development-guide/" class="md-tabs__link">
+        <a href="../development-guide/" class="md-tabs__link">
           
   
   
@@ -285,11 +283,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../COMPLIANCE_CRA_PLAN/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../COMPLIANCE_CRA_PLAN/" class="md-tabs__link">
           
   
   
@@ -323,7 +323,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Application Orchestration Platform" class="md-nav__button md-logo" aria-label="Application Orchestration Platform" data-md-component="logo">
+    <a href=".." title="Application Orchestration Platform" class="md-nav__button md-logo" aria-label="Application Orchestration Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -353,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -380,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/C4_architecture/" class="md-nav__link">
+      <a href="../architecture/C4_architecture/" class="md-nav__link">
         
   
   
@@ -407,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backend/fastapi/" class="md-nav__link">
+      <a href="../backend/fastapi/" class="md-nav__link">
         
   
   
@@ -434,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/" class="md-nav__link">
+      <a href="../frontend/" class="md-nav__link">
         
   
   
@@ -458,31 +458,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -500,7 +495,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -518,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../KEYCLOAK_README/" class="md-nav__link">
+      <a href="../auth/KEYCLOAK_README/" class="md-nav__link">
         
   
   
@@ -543,37 +538,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    OAuth2 Proxy
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../auth/OAUTH2_PROXY_README/" class="md-nav__link">
         
   
   
@@ -589,37 +557,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#local-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local integration
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -632,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OPENFGA_README/" class="md-nav__link">
+      <a href="../auth/OPENFGA_README/" class="md-nav__link">
         
   
   
@@ -719,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development-guide/" class="md-nav__link">
+      <a href="../development-guide/" class="md-nav__link">
         
   
   
@@ -751,26 +688,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -788,7 +730,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -806,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../COMPLIANCE_CRA_PLAN/" class="md-nav__link">
+      <a href="../COMPLIANCE_CRA_PLAN/" class="md-nav__link">
         
   
   
@@ -834,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CRA_EXECUTIVE_SUMMARY/" class="md-nav__link">
+      <a href="../CRA_EXECUTIVE_SUMMARY/" class="md-nav__link">
         
   
   
@@ -862,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../QUICKSTART_CRA_CHECKLIST/" class="md-nav__link">
+      <a href="../QUICKSTART_CRA_CHECKLIST/" class="md-nav__link">
         
   
   
@@ -890,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SECURITY_REQUIREMENTS/" class="md-nav__link">
+      <a href="../SECURITY_REQUIREMENTS/" class="md-nav__link">
         
   
   
@@ -918,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/THREAT_MODEL/" class="md-nav__link">
+      <a href="../architecture/THREAT_MODEL/" class="md-nav__link">
         
   
   
@@ -946,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SECURE_CODING/" class="md-nav__link">
+      <a href="../SECURE_CODING/" class="md-nav__link">
         
   
   
@@ -974,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../BUILD_RELEASE_PROCESS/" class="md-nav__link">
+      <a href="../BUILD_RELEASE_PROCESS/" class="md-nav__link">
         
   
   
@@ -1002,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SECURITY_TESTING_CHECKLIST/" class="md-nav__link">
+      <a href="../SECURITY_TESTING_CHECKLIST/" class="md-nav__link">
         
   
   
@@ -1030,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SBOM/" class="md-nav__link">
+      <a href="../SBOM/" class="md-nav__link">
         
   
   
@@ -1055,10 +997,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../SECURITY/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vulnerability Disclosure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1074,6 +1043,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vulnerability Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embargo-and-coordinated-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embargo and Coordinated Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-harbor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe Harbor
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1086,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../VULNERABILITY_ASSESSMENT/" class="md-nav__link">
+      <a href="../VULNERABILITY_ASSESSMENT/" class="md-nav__link">
         
   
   
@@ -1114,7 +1147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../INCIDENT_RESPONSE/" class="md-nav__link">
+      <a href="../INCIDENT_RESPONSE/" class="md-nav__link">
         
   
   
@@ -1169,10 +1202,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#local-integration" class="md-nav__link">
+  <a href="#supported-versions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Local integration
+        Supported Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vulnerability Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embargo-and-coordinated-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embargo and Coordinated Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-harbor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe Harbor
       
     </span>
   </a>
@@ -1199,10 +1265,19 @@
   
 
 
-<h1 id="oauth2-proxy">OAuth2 Proxy<a class="headerlink" href="#oauth2-proxy" title="Permanent link">&para;</a></h1>
-<p>OAuth2 Proxy is used to front the platform services with sign-in and session handling.</p>
-<h2 id="local-integration">Local integration<a class="headerlink" href="#local-integration" title="Permanent link">&para;</a></h2>
-<p>The proxy is configured to authenticate against the local Keycloak instance through the Docker Compose stack.</p>
+<h1 id="security-policy">Security Policy<a class="headerlink" href="#security-policy" title="Permanent link">&para;</a></h1>
+<h2 id="supported-versions">Supported Versions<a class="headerlink" href="#supported-versions" title="Permanent link">&para;</a></h2>
+<p>Security updates are provided for the latest major release. Older versions will receive critical backports on a case-by-case basis.</p>
+<h2 id="vulnerability-disclosure">Vulnerability Disclosure<a class="headerlink" href="#vulnerability-disclosure" title="Permanent link">&para;</a></h2>
+<p>If you discover a security vulnerability within the Application Orchestration Platform, please send an e-mail to our security team. Do not open a public issue on GitHub for unpatched vulnerabilities.</p>
+<ul>
+<li><strong>Email:</strong> <code>security@example.com</code> (Note: Update to actual contact)</li>
+<li><strong>Response Time:</strong> We will acknowledge receipt of your vulnerability report within 48 hours.</li>
+</ul>
+<h2 id="embargo-and-coordinated-disclosure">Embargo and Coordinated Disclosure<a class="headerlink" href="#embargo-and-coordinated-disclosure" title="Permanent link">&para;</a></h2>
+<p>We ask that you allow us 90 days to remediate the vulnerability before publicly disclosing it. For critical issues, we aim to deploy a fix within 24 hours.</p>
+<h2 id="safe-harbor">Safe Harbor<a class="headerlink" href="#safe-harbor" title="Permanent link">&para;</a></h2>
+<p>We will not take legal action against security researchers who discover vulnerabilities and report them to us in good faith, provided they comply with this policy and do not compromise user data.</p>
 
 
 
@@ -1268,10 +1343,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
