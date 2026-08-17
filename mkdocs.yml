@@ -14,6 +14,19 @@ nav:
       - OpenFGA: auth/OPENFGA_README.md
   - Operations:
       - Development Guide: development-guide.md
+  - Security & Compliance:
+      - CRA Plan: COMPLIANCE_CRA_PLAN.md
+      - Executive Summary: CRA_EXECUTIVE_SUMMARY.md
+      - Quickstart Checklist: QUICKSTART_CRA_CHECKLIST.md
+      - Security Requirements: SECURITY_REQUIREMENTS.md
+      - Threat Model: architecture/THREAT_MODEL.md
+      - Secure Coding: SECURE_CODING.md
+      - Build & Release Process: BUILD_RELEASE_PROCESS.md
+      - Testing Checklist: SECURITY_TESTING_CHECKLIST.md
+      - SBOM: SBOM.md
+      - Vulnerability Disclosure: SECURITY.md
+      - Vulnerability Assessment: VULNERABILITY_ASSESSMENT.md
+      - Incident Response: INCIDENT_RESPONSE.md
 theme:
   name: material
   features:

@@ -734,7 +734,7 @@ Test this runbook quarterly:
 
 ---
 
-**Questions?** Refer to [docs/COMPLIANCE_CRA_PLAN.md](../COMPLIANCE_CRA_PLAN.md) for detailed guidance.
+**Questions?** Refer to [docs/COMPLIANCE_CRA_PLAN.md](COMPLIANCE_CRA_PLAN.md) for detailed guidance.
 
 **Status:** Updated 2026-08-18  
 **Next Sync:** Weekly (Fridays, 2 PM CET)

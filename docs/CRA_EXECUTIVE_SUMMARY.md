@@ -12,7 +12,7 @@ Your Application Orchestration Platform has been assessed against the **EU Cyber
 
 ### Delivered Documents
 
-1. **[docs/COMPLIANCE_CRA_PLAN.md](docs/COMPLIANCE_CRA_PLAN.md)** (12 pages)
+1. **[docs/COMPLIANCE_CRA_PLAN.md](COMPLIANCE_CRA_PLAN.md)** (12 pages)
    - Full CRA requirement breakdown (8 key areas)
    - Detailed gap analysis of current state vs. requirements
    - 3-phase implementation plan (Weeks 1–15+)
@@ -20,14 +20,14 @@ Your Application Orchestration Platform has been assessed against the **EU Cyber
    - Success metrics and compliance matrix
    - Risk mitigation strategies
 
-2. **[docs/QUICKSTART_CRA_CHECKLIST.md](docs/QUICKSTART_CRA_CHECKLIST.md)** (8 pages)
+2. **[docs/QUICKSTART_CRA_CHECKLIST.md](QUICKSTART_CRA_CHECKLIST.md)** (8 pages)
    - Week-by-week actionable tasks (Weeks 1–15)
    - Quick-reference compliance checklist
    - GitHub Actions configuration templates
    - Security documentation templates
    - Status tracking and resource allocation
 
-3. **[.github/workflows/security-scanning.yml](.github/workflows/security-scanning.yml)** (CI/CD Workflow)
+3. **[.github/workflows/security-scanning.yml](https://github.com/rakrsh/application-orchestration-platform/blob/main/.github/workflows/security-scanning.yml)** (CI/CD Workflow)
    - Automated SAST scanning (Semgrep, Bandit)
    - Dependency vulnerability scanning (pip-audit, npm audit)
    - Secrets detection in code
@@ -91,7 +91,7 @@ Your Application Orchestration Platform has been assessed against the **EU Cyber
 
 1. **Create Security Requirements Document**
    - File: `docs/SECURITY_REQUIREMENTS.md`
-   - Template provided in [docs/QUICKSTART_CRA_CHECKLIST.md](docs/QUICKSTART_CRA_CHECKLIST.md)
+   - Template provided in [docs/QUICKSTART_CRA_CHECKLIST.md](QUICKSTART_CRA_CHECKLIST.md)
    - Owner: Architecture Lead
    - Time: 1 day
 
@@ -282,8 +282,8 @@ Week 11+:   Security Monitoring, Patch Management, Supply Chain Security
 
 For questions about this compliance plan:
 
-1. **Technical Questions:** Refer to [docs/COMPLIANCE_CRA_PLAN.md](docs/COMPLIANCE_CRA_PLAN.md) (detailed section)
-2. **Implementation Questions:** Refer to [docs/QUICKSTART_CRA_CHECKLIST.md](docs/QUICKSTART_CRA_CHECKLIST.md) (week-by-week guide)
+1. **Technical Questions:** Refer to [docs/COMPLIANCE_CRA_PLAN.md](COMPLIANCE_CRA_PLAN.md) (detailed section)
+2. **Implementation Questions:** Refer to [docs/QUICKSTART_CRA_CHECKLIST.md](QUICKSTART_CRA_CHECKLIST.md) (week-by-week guide)
 3. **Legal/Regulatory Questions:** Consult external legal counsel specializing in EU cybersecurity regulation
 4. **Security Audit:** Recommend engaging external security firm for threat modeling review (Week 2)
 
@@ -310,9 +310,9 @@ All compliance documents are located in `docs/` folder:
 
 | Document | Purpose | Audience | Status |
 |---|---|---|---|
-| [COMPLIANCE_CRA_PLAN.md](docs/COMPLIANCE_CRA_PLAN.md) | Detailed compliance roadmap | Technical, Leadership | ✅ Ready |
-| [QUICKSTART_CRA_CHECKLIST.md](docs/QUICKSTART_CRA_CHECKLIST.md) | Week-by-week implementation guide | Engineering | ✅ Ready |
-| [.github/workflows/security-scanning.yml](.github/workflows/security-scanning.yml) | GitHub Actions security pipeline | DevOps/Engineering | ✅ Ready to Use |
+| [COMPLIANCE_CRA_PLAN.md](COMPLIANCE_CRA_PLAN.md) | Detailed compliance roadmap | Technical, Leadership | ✅ Ready |
+| [QUICKSTART_CRA_CHECKLIST.md](QUICKSTART_CRA_CHECKLIST.md) | Week-by-week implementation guide | Engineering | ✅ Ready |
+| [.github/workflows/security-scanning.yml](https://github.com/rakrsh/application-orchestration-platform/blob/main/.github/workflows/security-scanning.yml) | GitHub Actions security pipeline | DevOps/Engineering | ✅ Ready to Use |
 | `SECURITY_REQUIREMENTS.md` | (To be created Week 1) | Engineering | 📋 Planned |
 | `architecture/THREAT_MODEL.md` | (To be created Week 1–2) | Architecture, Security | 📋 Planned |
 | `SECURITY.md` | (To be created Week 4) | Users, Security | 📋 Planned |
@@ -330,4 +330,4 @@ All compliance documents are located in `docs/` folder:
 
 ---
 
-**Ready to proceed?** Start with Week 1 tasks from [docs/QUICKSTART_CRA_CHECKLIST.md](docs/QUICKSTART_CRA_CHECKLIST.md).
+**Ready to proceed?** Start with Week 1 tasks from [docs/QUICKSTART_CRA_CHECKLIST.md](QUICKSTART_CRA_CHECKLIST.md).
