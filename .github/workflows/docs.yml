@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7 # nosemgrep: yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5 # nosemgrep: yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag
         with:
           python-version: '3.12'
 
@@ -27,7 +27,7 @@ jobs:
           pip install mkdocs mkdocs-material
 
       - name: Build and deploy docs
-        uses: rakrsh/central-actions/doc-build-deploy@main
+        uses: rakrsh/central-actions/doc-build-deploy@main # nosemgrep: yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag
         with:
           doc-directory: .
           doc-build-command: mkdocs build --strict

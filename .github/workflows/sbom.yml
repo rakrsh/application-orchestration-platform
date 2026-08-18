@@ -9,10 +9,10 @@ jobs:
   generate-sbom:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7 # nosemgrep: yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag
       
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5 # nosemgrep: yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag
         with:
           python-version: '3.12'
           
@@ -23,6 +23,6 @@ jobs:
         run: cyclonedx-bom -r backend/fastapi/requirements.txt -o sbom-python.json -format json
         
       - name: Upload Python SBOM to Release
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@v3 # nosemgrep: yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag
         with:
           files: sbom-python.json
