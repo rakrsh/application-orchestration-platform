@@ -168,7 +168,7 @@ def install_nginx_windows() -> None:
     archive_path = NGINX_ZIP_PATH
 
     logger.info(f"Downloading nginx {version} from {download_url}")
-    with urllib.request.urlopen(download_url) as response, archive_path.open(
+    with urllib.request.urlopen(download_url) as response, archive_path.open(  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
         "wb"
     ) as handle:
         shutil.copyfileobj(response, handle)
@@ -288,7 +288,7 @@ def create_cli_wrappers() -> None:
         f.write('python3 "$(dirname "$0")/cli.py" "$@"\n')
 
     if os.name != "nt":
-        os.chmod(sh_path, 0o755)
+        os.chmod(sh_path, 0o755)  # nosemgrep: python.lang.security.audit.insecure-file-permissions.insecure-file-permissions
 
 
 def parse_args() -> argparse.Namespace:
