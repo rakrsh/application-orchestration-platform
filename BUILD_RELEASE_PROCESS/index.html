@@ -1269,12 +1269,16 @@
 <h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
 <p>The Application Orchestration Platform follows a secure build and release process to ensure artifact integrity and traceability, complying with the EU CRA requirements.</p>
 <h2 id="2-continuous-integration-ci">2. Continuous Integration (CI)<a class="headerlink" href="#2-continuous-integration-ci" title="Permanent link">&para;</a></h2>
-<p>Every Pull Request to <code>main</code> must pass the following automated checks:
+<p>Every Pull Request and merged commit to <code>main</code> must pass automated checks and package generation:
 - <strong>Linting &amp; Formatting:</strong> ESLint, Prettier, Ruff/Black (Python).
 - <strong>Unit Tests:</strong> <code>pytest</code> (Backend), <code>Karma/Jasmine</code> (Frontend) with required code coverage thresholds.
-- <strong>Security Scanning:</strong> 
+- <strong>Security Scanning:</strong>
   - SAST (Static Application Security Testing) via Semgrep.
-  - Dependency Scanning (e.g., <code>pip-audit</code>, <code>npm audit</code>).</p>
+  - Dependency Scanning (e.g., <code>pip-audit</code>, <code>npm audit</code>).
+- <strong>Package Build &amp; Archiving:</strong>
+  - On each PR merge to <code>main</code> (and PR verification), CI builds the frontend production bundle (<code>dist/temp-app/browser</code>) and the backend distribution package.
+  - CI uploads verifiable build package artifacts (<code>frontend-dist</code>, <code>backend-package</code>) with retention for deployment and audit trails.
+  - Container image builds are validated in isolated CI runners to guarantee containerized package integrity.</p>
 <h2 id="3-continuous-deployment-release-cd">3. Continuous Deployment / Release (CD)<a class="headerlink" href="#3-continuous-deployment-release-cd" title="Permanent link">&para;</a></h2>
 <p>When a release is tagged:
 1. <strong>Build:</strong> Artifacts (Container images, UI bundles) are built in isolated CI runners.
