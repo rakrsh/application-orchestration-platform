@@ -4,12 +4,16 @@
 The Application Orchestration Platform follows a secure build and release process to ensure artifact integrity and traceability, complying with the EU CRA requirements.
 
 ## 2. Continuous Integration (CI)
-Every Pull Request to `main` must pass the following automated checks:
+Every Pull Request and merged commit to `main` must pass automated checks and package generation:
 - **Linting & Formatting:** ESLint, Prettier, Ruff/Black (Python).
 - **Unit Tests:** `pytest` (Backend), `Karma/Jasmine` (Frontend) with required code coverage thresholds.
-- **Security Scanning:** 
+- **Security Scanning:**
   - SAST (Static Application Security Testing) via Semgrep.
   - Dependency Scanning (e.g., `pip-audit`, `npm audit`).
+- **Package Build & Archiving:**
+  - On each PR merge to `main` (and PR verification), CI builds the frontend production bundle (`dist/temp-app/browser`) and the backend distribution package.
+  - CI uploads verifiable build package artifacts (`frontend-dist`, `backend-package`) with retention for deployment and audit trails.
+  - Container image builds are validated in isolated CI runners to guarantee containerized package integrity.
 
 ## 3. Continuous Deployment / Release (CD)
 When a release is tagged:
